@@ -1,0 +1,68 @@
+{
+ "A1": {
+  "verdict": "CORRECTED_LEMMA_VERIFIED",
+  "sequences_checked": 10209024,
+  "corrected_violations": 0,
+  "retracted_variant_violations": 510302
+ },
+ "A2_rows": [
+  {
+   "n": 10,
+   "Rstar_max": 3.6232708617074874,
+   "Rstar_median": 3.2599435075900645,
+   "half_s_log2n": 3.321928094887362,
+   "converse_floor": 0.272354902743313,
+   "kt_regret_max": 5.592483349393649
+  },
+  {
+   "n": 12,
+   "Rstar_max": 3.8327173712855243,
+   "Rstar_median": 3.4603550533307885,
+   "half_s_log2n": 3.584962500721156,
+   "converse_floor": 0.2403709274720267,
+   "kt_regret_max": 6.367822554512715
+  },
+  {
+   "n": 14,
+   "Rstar_max": 4.013054729623186,
+   "Rstar_median": 3.6334437117227263,
+   "half_s_log2n": 3.807354922057604,
+   "converse_floor": 0.21335743776814642,
+   "kt_regret_max": 6.86180846203231
+  },
+  {
+   "n": 16,
+   "Rstar_max": 4.17154134605109,
+   "Rstar_median": 3.7859903840245743,
+   "half_s_log2n": 4.0,
+   "converse_floor": 0.19020569640898533,
+   "kt_regret_max": 7.163403837734449
+  },
+  {
+   "n": 18,
+   "Rstar_max": 4.312997588264821,
+   "Rstar_median": 3.922492020796237,
+   "half_s_log2n": 4.169925001442312,
+   "converse_floor": 0.17010208749043576,
+   "kt_regret_max": null
+  }
+ ],
+ "A3": {
+  "total_types": 352207,
+  "n_failures": 144,
+  "coverage": {
+   "within_flip": 279555,
+   "cross_single": 56716,
+   "pair": 15792,
+   "cycle": 0
+  },
+  "max_radius": 4,
+  "n_range": [
+   12,
+   14,
+   16
+  ],
+  "certified": false
+ },
+ "v4_gate": "REVIEW_REQUIRED"
+}

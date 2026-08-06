@@ -1,0 +1,211 @@
+{
+ "rows": [
+  {
+   "n": 8,
+   "s": 1,
+   "checked": 256,
+   "corrected_viol": 0,
+   "retracted_viol": 166
+  },
+  {
+   "n": 8,
+   "s": 2,
+   "checked": 4096,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 8,
+   "s": 3,
+   "checked": 10240,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 9,
+   "s": 1,
+   "checked": 512,
+   "corrected_viol": 0,
+   "retracted_viol": 250
+  },
+  {
+   "n": 9,
+   "s": 2,
+   "checked": 8192,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 9,
+   "s": 3,
+   "checked": 20480,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 10,
+   "s": 1,
+   "checked": 1024,
+   "corrected_viol": 0,
+   "retracted_viol": 940
+  },
+  {
+   "n": 10,
+   "s": 2,
+   "checked": 16384,
+   "corrected_viol": 0,
+   "retracted_viol": 8
+  },
+  {
+   "n": 10,
+   "s": 3,
+   "checked": 40960,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 11,
+   "s": 1,
+   "checked": 2048,
+   "corrected_viol": 0,
+   "retracted_viol": 1904
+  },
+  {
+   "n": 11,
+   "s": 2,
+   "checked": 32768,
+   "corrected_viol": 0,
+   "retracted_viol": 8
+  },
+  {
+   "n": 11,
+   "s": 3,
+   "checked": 81920,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 12,
+   "s": 1,
+   "checked": 4096,
+   "corrected_viol": 0,
+   "retracted_viol": 3342
+  },
+  {
+   "n": 12,
+   "s": 2,
+   "checked": 65536,
+   "corrected_viol": 0,
+   "retracted_viol": 16
+  },
+  {
+   "n": 12,
+   "s": 3,
+   "checked": 163840,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 13,
+   "s": 1,
+   "checked": 8192,
+   "corrected_viol": 0,
+   "retracted_viol": 7522
+  },
+  {
+   "n": 13,
+   "s": 2,
+   "checked": 131072,
+   "corrected_viol": 0,
+   "retracted_viol": 16
+  },
+  {
+   "n": 13,
+   "s": 3,
+   "checked": 327680,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 14,
+   "s": 1,
+   "checked": 16384,
+   "corrected_viol": 0,
+   "retracted_viol": 15802
+  },
+  {
+   "n": 14,
+   "s": 2,
+   "checked": 262144,
+   "corrected_viol": 0,
+   "retracted_viol": 24
+  },
+  {
+   "n": 14,
+   "s": 3,
+   "checked": 655360,
+   "corrected_viol": 0,
+   "retracted_viol": 0
+  },
+  {
+   "n": 15,
+   "s": 1,
+   "checked": 32768,
+   "corrected_viol": 0,
+   "retracted_viol": 32134
+  },
+  {
+   "n": 15,
+   "s": 2,
+   "checked": 524288,
+   "corrected_viol": 0,
+   "retracted_viol": 84
+  },
+  {
+   "n": 16,
+   "s": 1,
+   "checked": 65536,
+   "corrected_viol": 0,
+   "retracted_viol": 61574
+  },
+  {
+   "n": 16,
+   "s": 2,
+   "checked": 1048576,
+   "corrected_viol": 0,
+   "retracted_viol": 168
+  },
+  {
+   "n": 17,
+   "s": 1,
+   "checked": 131072,
+   "corrected_viol": 0,
+   "retracted_viol": 128120
+  },
+  {
+   "n": 17,
+   "s": 2,
+   "checked": 2097152,
+   "corrected_viol": 0,
+   "retracted_viol": 248
+  },
+  {
+   "n": 18,
+   "s": 1,
+   "checked": 262144,
+   "corrected_viol": 0,
+   "retracted_viol": 257544
+  },
+  {
+   "n": 18,
+   "s": 2,
+   "checked": 4194304,
+   "corrected_viol": 0,
+   "retracted_viol": 432
+  }
+ ],
+ "corrected_violations": 0,
+ "retracted_variant_violations": 510302,
+ "sequences_checked": 10209024,
+ "verdict": "CORRECTED_LEMMA_VERIFIED"
+}
