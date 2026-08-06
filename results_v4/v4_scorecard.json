@@ -49,20 +49,21 @@
  ],
  "A3": {
   "total_types": 352207,
-  "n_failures": 144,
+  "n_failures": 0,
   "coverage": {
    "within_flip": 279555,
    "cross_single": 56716,
    "pair": 15792,
-   "cycle": 0
+   "cycle": 0,
+   "radius_2s": 144
   },
-  "max_radius": 4,
+  "max_radius": 6,
   "n_range": [
    12,
    14,
    16
   ],
-  "certified": false
+  "certified": true
  },
- "v4_gate": "REVIEW_REQUIRED"
+ "v41_gate": "FINAL_CENSUS_CERTIFIED_RADIUS_2S"
 }
