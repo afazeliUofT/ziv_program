@@ -1,0 +1,43 @@
+{
+ "per_n": [
+  {
+   "n": 12,
+   "link1_viol": 0,
+   "worst_total_slack_bits": 9.192645077942396,
+   "worst_total_slack_per_n": 0.7660537564951997,
+   "measured_ZL_slack_bits": 17.390359525563188,
+   "measured_ZL_slack_per_n": 1.4491966271302656,
+   "proven_link2_envelope_bits": 22.202638308846552
+  },
+  {
+   "n": 14,
+   "link1_viol": 0,
+   "worst_total_slack_bits": 12.083922483545091,
+   "worst_total_slack_per_n": 0.8631373202532208,
+   "measured_ZL_slack_bits": 21.0,
+   "measured_ZL_slack_per_n": 1.5,
+   "proven_link2_envelope_bits": 23.44134357365111
+  },
+  {
+   "n": 16,
+   "link1_viol": 0,
+   "worst_total_slack_bits": 13.192645077942396,
+   "worst_total_slack_per_n": 0.8245403173713998,
+   "measured_ZL_slack_bits": 21.390359525563188,
+   "measured_ZL_slack_per_n": 1.3368974703476992,
+   "proven_link2_envelope_bits": 24.524777047502035
+  },
+  {
+   "n": 18,
+   "link1_viol": 0,
+   "worst_total_slack_bits": 15.08746284125034,
+   "worst_total_slack_per_n": 0.8381923800694634,
+   "measured_ZL_slack_bits": 25.0,
+   "measured_ZL_slack_per_n": 1.3888888888888888,
+   "proven_link2_envelope_bits": 25.48756508066151
+  }
+ ],
+ "link1_violations": 0,
+ "link2_violations": 0,
+ "verdict": "VERIFIED"
+}

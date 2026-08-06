@@ -1,0 +1,12 @@
+{
+ "scale": "full",
+ "seed": 20260817,
+ "timings_s": {
+  "v1_lemmaA": 0.5,
+  "v3_density": 0.4,
+  "v4_hmm": 0.4,
+  "v2_links": 3.2
+ },
+ "total_s": 4.4,
+ "week2_gate": "LEMMA_A_AND_LINKS_VERIFIED"
+}

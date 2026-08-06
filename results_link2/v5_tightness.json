@@ -1,0 +1,29 @@
+{
+ "rows": [
+  {
+   "n": 12,
+   "measured_worst_total_per_n": 0.7660537564951997,
+   "ZL_component_per_n": 1.4491966271302656,
+   "counting_component_per_n": 1.850219859070546
+  },
+  {
+   "n": 14,
+   "measured_worst_total_per_n": 0.8631373202532208,
+   "ZL_component_per_n": 1.5,
+   "counting_component_per_n": 1.674381683832222
+  },
+  {
+   "n": 16,
+   "measured_worst_total_per_n": 0.8245403173713998,
+   "ZL_component_per_n": 1.3368974703476992,
+   "counting_component_per_n": 1.5327985654688772
+  },
+  {
+   "n": 18,
+   "measured_worst_total_per_n": 0.8381923800694634,
+   "ZL_component_per_n": 1.3888888888888888,
+   "counting_component_per_n": 1.4159758378145284
+  }
+ ],
+ "reading": "total slack is ZL-dominated at these n; the proven counting envelope is the minor term"
+}

@@ -1,0 +1,18 @@
+{
+ "rows": [
+  {
+   "n": 10,
+   "worst_log2_Glz_over_Ghmm": 8.0,
+   "worst_per_n": 0.8,
+   "worst_seq": "0101010101",
+   "note": "grid genie lower-bounds true HMM genie"
+  },
+  {
+   "n": 12,
+   "worst_log2_Glz_over_Ghmm": 8.727920454563199,
+   "worst_per_n": 0.7273267045469333,
+   "worst_seq": "010101010101",
+   "note": "grid genie lower-bounds true HMM genie"
+  }
+ ]
+}

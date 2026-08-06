@@ -1,0 +1,60 @@
+{
+ "V1_lemmaA": {
+  "verdict": "VERIFIED",
+  "pinned_convention": {
+   "name": "Lout_root0",
+   "match_fraction": 1.0
+  },
+  "bound_violations": 0,
+  "types_checked": 7725
+ },
+ "V2_links": {
+  "verdict": "VERIFIED",
+  "link1_violations": 0,
+  "link2_violations": 0
+ },
+ "V3_density_worst_gaps": [
+  {
+   "n": 10,
+   "s": 2,
+   "max_gap": 2.7598493303627025
+  },
+  {
+   "n": 10,
+   "s": 3,
+   "max_gap": 2.7598493303627025
+  },
+  {
+   "n": 13,
+   "s": 2,
+   "max_gap": 3.2446136089423963
+  },
+  {
+   "n": 13,
+   "s": 3,
+   "max_gap": 3.2446136089423963
+  },
+  {
+   "n": 16,
+   "s": 2,
+   "max_gap": 3.6095682497496604
+  }
+ ],
+ "V4_hmm_worst": [
+  {
+   "n": 10,
+   "worst_log2_Glz_over_Ghmm": 8.0,
+   "worst_per_n": 0.8,
+   "worst_seq": "0101010101",
+   "note": "grid genie lower-bounds true HMM genie"
+  },
+  {
+   "n": 12,
+   "worst_log2_Glz_over_Ghmm": 8.727920454563199,
+   "worst_per_n": 0.7273267045469333,
+   "worst_seq": "010101010101",
+   "note": "grid genie lower-bounds true HMM genie"
+  }
+ ],
+ "week2_gate": "LEMMA_A_AND_LINKS_VERIFIED"
+}
