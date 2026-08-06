@@ -1,0 +1,1262 @@
+{
+ "RUN_MANIFEST": {
+  "scale": "full",
+  "original_seed": 20260805,
+  "k4_rerun_seed": 20260809,
+  "k4_rerun_reason": "pre-observation patch: (a) pop budget 40x->8x+20k; (b) X5 splice post-regime (0.025,0.7)->(0.008,0.55) because the original was infeasible for every ranked guesser under the query cap (entropy rate 0.224, median rank ~2^29) and would have measured the cap, not the premium. K4 had produced no results before the patch. Thresholds unchanged.",
+  "timings_s": {
+   "k0_controls": 1384.43,
+   "k6_entropy_audit": 0.35,
+   "k2_masking": 9.11,
+   "k3_dl_geometry": 13.57,
+   "k5_individual": 297.8,
+   "k4_head_to_head_rerun": 1428.3,
+   "note": "K0-K5 timings as reported by the user's console from the original run (completed before the interrupt); their results files are unchanged."
+  },
+  "python": "3.12.3",
+  "numpy": "2.5.1",
+  "mechanical_recommendation": "PIVOT(drop effective DL geometry; keep Pillars I/II)",
+  "crux_status_summary": {
+   "X1": "PASS_PROVISIONAL",
+   "X2": "FAIL",
+   "X3": "PASS",
+   "X4": "AMBIGUOUS",
+   "X5": "FAIL"
+  },
+  "k4b_window": {
+   "seed": 20260811,
+   "kappas": [
+    2.5,
+    2.8
+   ],
+   "blocks": 2000,
+   "runtime_s": 517.7,
+   "X4_status_pooled": "AMBIGUOUS",
+   "reason": "AMBIGUOUS meant zero in-window operating points (grid straddled the window); this is the pre-registered escalation, not a threshold change."
+  }
+ },
+ "thresholds": {
+  "_provenance": "Frozen after apparatus smoke-validation (bug fixes to probe design), BEFORE the decisive full-scale run. Changing these after seeing full-scale results invalidates the protocol.",
+  "X1_entropy_premise": {
+   "min_models_passing": 2,
+   "shannon_structure_ratio_max": 0.6,
+   "hrate_budget_fraction_R075": 0.5,
+   "rule": "PASS_PROVISIONAL iff >=2 non-iid, non-PRNG proxy models have H_rate <= 0.6*H_marginal AND H_rate <= 0.5*(1-R) at R=0.75. Renyi-1/2 process and marginal rates are reported diagnostics (memory can carry a mean-guesswork surcharge; feasibility of typical guessing is Shannon-governed, tails managed by abandonment).",
+   "status_semantics": "PASS here is PROVISIONAL (proxies); terminal X1 requires real traces in data/user_traces/"
+  },
+  "X2_masking": {
+   "kill_slope_min": 0.95,
+   "pass_slope_max": 0.8,
+   "slope_comment": "Fitted log-log growth exponent of the worst positive adversarial masking defect vs n. >=0.95 (linear growth) = FAIL effective Pillar III; <=0.80 = PASS side condition; between = AMBIGUOUS.",
+   "mdl_coset_in_regime_success_min": 0.9,
+   "mdl_coset_min_samples": 15,
+   "mdl_comment": "Direct half-redundancy test with the KT-hierarchy exact codelength as the PRIMARY universal code at enumerable n (LZ78's absolute overhead at n<=32 empties the regime; its bins are reported as occupancy evidence). Success >= 0.90 over KT-trials with r = L(z)/d_L,min < 0.5, provided >= 15 such samples."
+  },
+  "X3_individual_sequence": {
+   "kill_rule": "worst_gap_kt_per_n strictly INCREASING across all tested n AND worst_gap_lz_per_n strictly increasing => FAIL (structural alarm for Link 2)",
+   "pass_rule": "worst_gap_kt_per_n non-increasing from smallest to largest tested n AND <= 0.45 at the largest n",
+   "kt_gap_max_at_largest_n": 0.45,
+   "comment": "Exhaustive exact guessing ranks vs the pointwise-min over ALL 2-state genie machines. LZ alone is expected to look poor at tiny n (O(loglog n/log n) redundancy); the KT-hierarchy trend is the decisive early signal."
+  },
+  "X4_finite_n_materialization": {
+   "universal_vs_oracle_bler_ratio_max": 2.0,
+   "interleaved_vs_universal_bler_ratio_min": 3.0,
+   "min_operating_points": 2,
+   "oracle_bler_window": [
+    0.001,
+    0.05
+   ],
+   "median_queries_max": 10000,
+   "comment": "At >= 2 operating points with oracle BLER in the window: universal BLER <= 2x oracle AND interleaved-baseline BLER >= 3x universal AND universal median queries <= 1e4. Laptop-scale surrogate of the P2 dB gate at n=128, R=0.75."
+  },
+  "X5_differentiation": {
+   "splice_bler_ratio_min": 3.0,
+   "comment": "Post-regime-splice, fitted-static BLER must exceed universal BLER by >= 3x, else the universality premium over cheap per-deployment fitting is undemonstrated and the headline pivots to online-adaptive decoding."
+  },
+  "verdict_logic": {
+   "STOP": "X3 FAIL (structural), OR (X2 FAIL AND X4 FAIL AND X1 FAIL_PROXY)",
+   "PIVOT": "X5 FAIL with X4 PASS -> online-adaptive reframe; X2 FAIL alone -> drop effective DL geometry, keep Pillars I/II; X4 FAIL alone -> storage/hybrid niche or asymptotic-theory-only",
+   "CONTINUE": "X2, X3, X4 PASS (X1 provisional acceptable pending real traces)"
+  }
+ },
+ "k0_controls.json": {
+  "positive": [
+   {
+    "n": 64,
+    "median_q": 3.5,
+    "mean_q": 324.4266666666667,
+    "ref_log2_mean_q_H12": 16.757032671504543,
+    "ref_log2_median_q_H": 5.170760697338316,
+    "note": "uncapped MEAN queries track n*H_{1/2}; MEDIAN tracks ~n*H (typical-set rank)",
+    "bler": 0.006666666666666667,
+    "capped": 0.0
+   },
+   {
+    "n": 96,
+    "median_q": 29.5,
+    "mean_q": 738.44,
+    "ref_log2_mean_q_H12": 25.135549007256813,
+    "ref_log2_median_q_H": 7.756141046007473,
+    "note": "uncapped MEAN queries track n*H_{1/2}; MEDIAN tracks ~n*H (typical-set rank)",
+    "bler": 0.08,
+    "capped": 0.08
+   },
+   {
+    "n": 128,
+    "median_q": 87.5,
+    "mean_q": 2528.82,
+    "ref_log2_mean_q_H12": 33.51406534300909,
+    "ref_log2_median_q_H": 10.341521394676631,
+    "note": "uncapped MEAN queries track n*H_{1/2}; MEDIAN tracks ~n*H (typical-set rank)",
+    "bler": 0.2,
+    "capped": 0.2
+   }
+  ],
+  "negative": {
+   "n": 128,
+   "median_q": 2161.0,
+   "bler": 1.0,
+   "note": "PRNG jam: expected high queries / errors (vacuity boundary of the competitive claim)"
+  }
+ },
+ "k2_masking.json": {
+  "family": [
+   {
+    "n": 256,
+    "family_max_defect": -89,
+    "family_med_defect": -107.0
+   },
+   {
+    "n": 1024,
+    "family_max_defect": -209,
+    "family_med_defect": -274.0
+   },
+   {
+    "n": 4096,
+    "family_max_defect": -459,
+    "family_med_defect": -632.0
+   },
+   {
+    "n": 16384,
+    "family_max_defect": 110,
+    "family_med_defect": -1508.0
+   }
+  ],
+  "adversarial": [
+   {
+    "n": 256,
+    "adv_max_defect": -84.0,
+    "adv_max_defect_per_n": -0.328125
+   },
+   {
+    "n": 1024,
+    "adv_max_defect": -171.0,
+    "adv_max_defect_per_n": -0.1669921875
+   },
+   {
+    "n": 4096,
+    "adv_max_defect": -354.0,
+    "adv_max_defect_per_n": -0.08642578125
+   },
+   {
+    "n": 16384,
+    "adv_max_defect": 200.0,
+    "adv_max_defect_per_n": 0.01220703125
+   }
+  ],
+  "defect_growth_slope": 1.146578428466212
+ },
+ "k3_dl_geometry.json": {
+  "dl_gv": [
+   {
+    "n": 16,
+    "k": 8,
+    "redundancy": 8,
+    "dmin_LZ_mean": 18.066666666666666,
+    "dmin_KT_mean": 11.411825157459042,
+    "dmin_KT_min": 9.721268679503597
+   },
+   {
+    "n": 20,
+    "k": 10,
+    "redundancy": 10,
+    "dmin_LZ_mean": 20.666666666666668,
+    "dmin_KT_mean": 13.336229285549694,
+    "dmin_KT_min": 8.991117321685573
+   },
+   {
+    "n": 24,
+    "k": 12,
+    "redundancy": 12,
+    "dmin_LZ_mean": 24.75,
+    "dmin_KT_mean": 15.765147394205343,
+    "dmin_KT_min": 10.737362605214669
+   },
+   {
+    "n": 28,
+    "k": 14,
+    "redundancy": 14,
+    "dmin_LZ_mean": 27.5,
+    "dmin_KT_mean": 17.808710686087217,
+    "dmin_KT_min": 14.011382448494274
+   },
+   {
+    "n": 32,
+    "k": 16,
+    "redundancy": 16,
+    "dmin_LZ_mean": 31.0,
+    "dmin_KT_mean": 20.649589665633982,
+    "dmin_KT_min": 19.202535971801215
+   }
+  ],
+  "mdl_coset": {
+   "n": 24,
+   "k": 12,
+   "dmin_LZ": 25,
+   "dmin_KT": 15.343421930692317,
+   "kt": {
+    "bins": [
+     {
+      "lo": 0.0,
+      "hi": 0.35,
+      "succ": 0,
+      "tot": 0,
+      "success_rate": null
+     },
+     {
+      "lo": 0.35,
+      "hi": 0.5,
+      "succ": 0,
+      "tot": 0,
+      "success_rate": null
+     },
+     {
+      "lo": 0.5,
+      "hi": 0.7,
+      "succ": 139,
+      "tot": 139,
+      "success_rate": 1.0
+     },
+     {
+      "lo": 0.7,
+      "hi": 10.0,
+      "succ": 579,
+      "tot": 761,
+      "success_rate": 0.7608409986859396
+     }
+    ],
+    "success_rate_in_regime": null,
+    "in_regime_samples": 0
+   },
+   "lz": {
+    "bins": [
+     {
+      "lo": 0.0,
+      "hi": 0.35,
+      "succ": 0,
+      "tot": 0,
+      "success_rate": null
+     },
+     {
+      "lo": 0.35,
+      "hi": 0.5,
+      "succ": 0,
+      "tot": 0,
+      "success_rate": null
+     },
+     {
+      "lo": 0.5,
+      "hi": 0.7,
+      "succ": 0,
+      "tot": 0,
+      "success_rate": null
+     },
+     {
+      "lo": 0.7,
+      "hi": 10.0,
+      "succ": 415,
+      "tot": 900,
+      "success_rate": 0.46111111111111114
+     }
+    ],
+    "success_rate_in_regime": null,
+    "in_regime_samples": 0
+   }
+  }
+ },
+ "k4_head_to_head.json": {
+  "config": {
+   "n": 128,
+   "m": 32,
+   "R": 0.75,
+   "a": 0.85
+  },
+  "cells": [
+   {
+    "kappa": 1.5,
+    "b": 0.0045000000000000005,
+    "rates": {
+     "marginal": 0.18999075553626754,
+     "rate": 0.05811075179837692,
+     "renyi12_rate": 0.3409564237339357,
+     "pi1": 0.029126213592233018
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 337,
+      "errors": 40,
+      "bler": 0.11869436201780416,
+      "cap_rate": 0.11869436201780416,
+      "q_med": 1.0,
+      "q_p90": 3894.0
+     },
+     "universal_kt": {
+      "blocks": 90,
+      "errors": 40,
+      "bler": 0.4444444444444444,
+      "cap_rate": 0.4444444444444444,
+      "q_med": 67.5,
+      "q_p90": 837.0
+     },
+     "iid_matched_interleaved": {
+      "blocks": 44,
+      "errors": 40,
+      "bler": 0.9090909090909091,
+      "cap_rate": 0.9090909090909091,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 117,
+      "errors": 40,
+      "bler": 0.3418803418803419,
+      "cap_rate": 0.3418803418803419,
+      "q_med": 1.0,
+      "q_p90": 129.0
+     }
+    }
+   },
+   {
+    "kappa": 2.2,
+    "b": 0.006600000000000001,
+    "rates": {
+     "marginal": 0.25204462120386145,
+     "rate": 0.08058349611058713,
+     "renyi12_rate": 0.37958570619447257,
+     "pi1": 0.042145593869731816
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 190,
+      "errors": 40,
+      "bler": 0.21052631578947367,
+      "cap_rate": 0.21052631578947367,
+      "q_med": 225.5,
+      "q_p90": 3703.0
+     },
+     "universal_kt": {
+      "blocks": 75,
+      "errors": 40,
+      "bler": 0.5333333333333333,
+      "cap_rate": 0.5333333333333333,
+      "q_med": 837.0,
+      "q_p90": 837.0
+     },
+     "iid_matched_interleaved": {
+      "blocks": 40,
+      "errors": 40,
+      "bler": 1.0,
+      "cap_rate": 1.0,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 73,
+      "errors": 40,
+      "bler": 0.547945205479452,
+      "cap_rate": 0.547945205479452,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     }
+    }
+   },
+   {
+    "kappa": 3.0,
+    "b": 0.009000000000000001,
+    "rates": {
+     "marginal": 0.3138129641688652,
+     "rate": 0.10441396412290616,
+     "renyi12_rate": 0.41303519434667246,
+     "pi1": 0.056603773584905696
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 136,
+      "errors": 40,
+      "bler": 0.29411764705882354,
+      "cap_rate": 0.29411764705882354,
+      "q_med": 435.5,
+      "q_p90": 3399.0
+     },
+     "universal_kt": {
+      "blocks": 70,
+      "errors": 40,
+      "bler": 0.5714285714285714,
+      "cap_rate": 0.5714285714285714,
+      "q_med": 837.0,
+      "q_p90": 837.0
+     },
+     "iid_matched_interleaved": {
+      "blocks": 40,
+      "errors": 40,
+      "bler": 1.0,
+      "cap_rate": 1.0,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 62,
+      "errors": 40,
+      "bler": 0.6451612903225806,
+      "cap_rate": 0.6451612903225806,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     }
+    }
+   },
+   {
+    "kappa": 3.6,
+    "b": 0.0108,
+    "rates": {
+     "marginal": 0.3552506785492525,
+     "rate": 0.12123103968203201,
+     "renyi12_rate": 0.43359828964009334,
+     "pi1": 0.06716417910447764
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 87,
+      "errors": 40,
+      "bler": 0.45977011494252873,
+      "cap_rate": 0.45977011494252873,
+      "q_med": 1452.0,
+      "q_p90": 3297.0
+     },
+     "universal_kt": {
+      "blocks": 65,
+      "errors": 40,
+      "bler": 0.6153846153846154,
+      "cap_rate": 0.6153846153846154,
+      "q_med": 837.0,
+      "q_p90": 837.0
+     },
+     "iid_matched_interleaved": {
+      "blocks": 40,
+      "errors": 40,
+      "bler": 1.0,
+      "cap_rate": 1.0,
+      "q_med": 1.0,
+      "q_p90": 1.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 53,
+      "errors": 40,
+      "bler": 0.7547169811320755,
+      "cap_rate": 0.7547169811320755,
+      "q_med": 1.0,
+      "q_p90": 1.0
+     }
+    }
+   }
+  ],
+  "ge_cell": {
+   "params": {
+    "pg": 0.001,
+    "pb": 0.35,
+    "g2b": 0.008,
+    "b2g": 0.15
+   },
+   "marginal_flip": 0.018670886075949366,
+   "res": {
+    "oracle_ge": {
+     "blocks": 160,
+     "errors": 40,
+     "bler": 0.25,
+     "cap_rate": 0.25,
+     "q_med": 72.0,
+     "q_p90": 2884.0
+    },
+    "universal_kt": {
+     "blocks": 116,
+     "errors": 40,
+     "bler": 0.3448275862068966,
+     "cap_rate": 0.3448275862068966,
+     "q_med": 72.5,
+     "q_p90": 837.0
+    },
+    "iid_matched_interleaved": {
+     "blocks": 63,
+     "errors": 40,
+     "bler": 0.6349206349206349,
+     "cap_rate": 0.6349206349206349,
+     "q_med": 129.0,
+     "q_p90": 129.0
+    }
+   }
+  },
+  "splice": {
+   "pre": [
+    0.003,
+    0.85
+   ],
+   "post": [
+    0.008,
+    0.55
+   ],
+   "bler_fitted_static": 0.30333333333333334,
+   "bler_universal": 0.4033333333333333,
+   "blocks": 300
+  }
+ },
+ "k4b_window.json": {
+  "config": {
+   "n": 128,
+   "m": 32,
+   "R": 0.75,
+   "a": 0.85,
+   "blocks": 2000,
+   "errt": 60,
+   "cap": 30000,
+   "seed": 20260811
+  },
+  "cells": [
+   {
+    "kappa": 2.5,
+    "b": 0.0075,
+    "rates": {
+     "marginal": 0.27619542764793886,
+     "rate": 0.08972690770547653,
+     "renyi12_rate": 0.39313740703479794,
+     "pi1": 0.04761904761904759
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 217,
+      "errors": 60,
+      "bler": 0.2764976958525346,
+      "cap_rate": 0.2764976958525346,
+      "q_med": 307.0,
+      "q_p90": 3594.0
+     },
+     "universal_kt": {
+      "blocks": 103,
+      "errors": 60,
+      "bler": 0.5825242718446602,
+      "cap_rate": 0.5825242718446602,
+      "q_med": 837.0,
+      "q_p90": 837.0
+     },
+     "iid_matched_interleaved": {
+      "blocks": 61,
+      "errors": 60,
+      "bler": 0.9836065573770492,
+      "cap_rate": 0.9836065573770492,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 84,
+      "errors": 60,
+      "bler": 0.7142857142857143,
+      "cap_rate": 0.7142857142857143,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     }
+    }
+   },
+   {
+    "kappa": 2.8,
+    "b": 0.0084,
+    "rates": {
+     "marginal": 0.299132603925392,
+     "rate": 0.09861739739264436,
+     "renyi12_rate": 0.40542701027440514,
+     "pi1": 0.05303030303030303
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 237,
+      "errors": 60,
+      "bler": 0.25316455696202533,
+      "cap_rate": 0.25316455696202533,
+      "q_med": 399.0,
+      "q_p90": 3496.0
+     },
+     "universal_kt": {
+      "blocks": 103,
+      "errors": 60,
+      "bler": 0.5825242718446602,
+      "cap_rate": 0.5825242718446602,
+      "q_med": 837.0,
+      "q_p90": 837.0
+     },
+     "iid_matched_interleaved": {
+      "blocks": 61,
+      "errors": 60,
+      "bler": 0.9836065573770492,
+      "cap_rate": 0.9836065573770492,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 92,
+      "errors": 60,
+      "bler": 0.6521739130434783,
+      "cap_rate": 0.6521739130434783,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     }
+    }
+   }
+  ],
+  "runtime_s": 517.7
+ },
+ "k5_individual.json": {
+  "exhaustive_vs_2state": [
+   {
+    "nbits": 12,
+    "worst_gap_lz_bits": 9.192645077942396,
+    "worst_gap_lz_per_n": 0.7660537564951997,
+    "worst_gap_kt_bits": 5.799975391692007,
+    "worst_gap_kt_per_n": 0.48333128264100056,
+    "worst_seq_kt": "000000001111",
+    "mean_gap_kt_per_n": 0.11247983150702216
+   },
+   {
+    "nbits": 14,
+    "worst_gap_lz_bits": 12.083922483545091,
+    "worst_gap_lz_per_n": 0.8631373202532208,
+    "worst_gap_kt_bits": 6.057991722759176,
+    "worst_gap_kt_per_n": 0.43271369448279834,
+    "worst_seq_kt": "00000000011111",
+    "mean_gap_kt_per_n": 0.09985408022404203
+   },
+   {
+    "nbits": 16,
+    "worst_gap_lz_bits": 13.192645077942396,
+    "worst_gap_lz_per_n": 0.8245403173713998,
+    "worst_gap_kt_bits": 6.722891495844625,
+    "worst_gap_kt_per_n": 0.42018071849028904,
+    "worst_seq_kt": "1010101011101110",
+    "mean_gap_kt_per_n": 0.09058903529240314
+   },
+   {
+    "nbits": 18,
+    "worst_gap_lz_bits": 15.08746284125034,
+    "worst_gap_lz_per_n": 0.8381923800694634,
+    "worst_gap_kt_bits": 7.587636253789768,
+    "worst_gap_kt_per_n": 0.4215353474327649,
+    "worst_seq_kt": "101010101011101110",
+    "mean_gap_kt_per_n": 0.08250421466863453
+   }
+  ],
+  "large_n_link1_slack": [
+   {
+    "n": 512,
+    "adv_slack_bits_per_symbol": 0.44059229006095346
+   },
+   {
+    "n": 2048,
+    "adv_slack_bits_per_symbol": 0.27322983858044
+   },
+   {
+    "n": 8192,
+    "adv_slack_bits_per_symbol": 0.16059222862080133
+   }
+  ]
+ },
+ "k6_entropy_audit.json": {
+  "models": {
+   "iid_p03": {
+    "estimated": {
+     "marginal": 0.19277619899934884,
+     "rate_plugin": 0.19261517843845954,
+     "renyi12_rate_plugin": 0.4050630664510225,
+     "renyi12_marginal": 0.42158338586689537,
+     "lz_ratio": 0.2695770263671875,
+     "p1": 0.0296783447265625,
+     "n": 131072
+    }
+   },
+   "markov_mild": {
+    "estimated": {
+     "marginal": 0.07503649987088204,
+     "rate_plugin": 0.06086541308511082,
+     "renyi12_rate_plugin": 0.2840979646438133,
+     "renyi12_marginal": 0.25136283562231054,
+     "lz_ratio": 0.09735870361328125,
+     "p1": 0.0091400146484375,
+     "n": 131072
+    },
+    "exact": {
+     "marginal": 0.0750792681095351,
+     "rate": 0.06097440633598159,
+     "renyi12_rate": 0.31685471001830273,
+     "pi1": 0.009146341463414634
+    }
+   },
+   "markov_bursty": {
+    "estimated": {
+     "marginal": 0.09012317567225214,
+     "rate_plugin": 0.025014684763621134,
+     "renyi12_rate_plugin": 0.23065181374897797,
+     "renyi12_marginal": 0.27808721569070716,
+     "lz_ratio": 0.06453704833984375,
+     "p1": 0.0114288330078125,
+     "n": 131072
+    },
+    "exact": {
+     "marginal": 0.10106696361212415,
+     "rate": 0.0285644165115655,
+     "renyi12_rate": 0.2687217250941385,
+     "pi1": 0.013157894736842103
+    }
+   },
+   "gilbert_elliott": {
+    "estimated": {
+     "marginal": 0.13377058247539628,
+     "rate_plugin": 0.09975788801178347,
+     "renyi12_rate_plugin": 0.7217614562132408,
+     "renyi12_marginal": 0.34544670712755166,
+     "lz_ratio": 0.14478302001953125,
+     "p1": 0.018646240234375,
+     "n": 131072
+    },
+    "exact_bounds": {
+     "marginal_exact": 0.13391147894355046,
+     "rate_lower_bound_HgivenS": 0.05812473483305758
+    }
+   },
+   "periodic_jitter": {
+    "estimated": {
+     "marginal": 0.5078745671914708,
+     "rate_plugin": 0.3254711108956614,
+     "renyi12_rate_plugin": 0.3614665662573594,
+     "renyi12_marginal": 0.7069440407144452,
+     "lz_ratio": 0.36489105224609375,
+     "p1": 0.1126556396484375,
+     "n": 131072
+    }
+   },
+   "protocol_onoff": {
+    "estimated": {
+     "marginal": 0.32033771729148064,
+     "rate_plugin": 0.17540496257501947,
+     "renyi12_rate_plugin": 0.9203450592139212,
+     "renyi12_marginal": 0.554164094002041,
+     "lz_ratio": 0.236053466796875,
+     "p1": 0.05821990966796875,
+     "n": 131072
+    }
+   },
+   "lfsr_shortspan": {
+    "estimated": {
+     "marginal": 0.9998179861627531,
+     "rate_plugin": 0.00038043681557607147,
+     "renyi12_rate_plugin": 0.003987274524360399,
+     "renyi12_marginal": 0.9999089882969376,
+     "lz_ratio": 0.3445587158203125,
+     "p1": 0.5079421997070312,
+     "n": 131072
+    }
+   },
+   "lfsr_longspan": {
+    "estimated": {
+     "marginal": 0.9999999998320481,
+     "rate_plugin": 0.9999999784854234,
+     "renyi12_rate_plugin": 0.9999999892384034,
+     "renyi12_marginal": 0.9999999999160242,
+     "lz_ratio": 1.1557159423828125,
+     "p1": 0.5000076293945312,
+     "n": 131072
+    }
+   }
+  },
+  "user_traces": {},
+  "margins": {
+   "iid_p03": {
+    "structure_ratio_shannon": 0.9991647280020817,
+    "H12_process": 0.4050630664510225,
+    "H12_marginal": 0.42158338586689537,
+    "renyi_surcharge": -0.01652031941587284,
+    "feasibility": {
+     "R=0.75": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.25
+     },
+     "R=0.875": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.125
+     },
+     "R=0.9375": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.0625
+     }
+    }
+   },
+   "markov_mild": {
+    "structure_ratio_shannon": 0.8111440857428597,
+    "H12_process": 0.2840979646438133,
+    "H12_marginal": 0.25136283562231054,
+    "renyi_surcharge": 0.032735129021502773,
+    "feasibility": {
+     "R=0.75": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.25
+     },
+     "R=0.875": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.125
+     },
+     "R=0.9375": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.0625
+     }
+    }
+   },
+   "markov_bursty": {
+    "structure_ratio_shannon": 0.2775610665850389,
+    "H12_process": 0.23065181374897797,
+    "H12_marginal": 0.27808721569070716,
+    "renyi_surcharge": -0.04743540194172918,
+    "feasibility": {
+     "R=0.75": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.25
+     },
+     "R=0.875": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.125
+     },
+     "R=0.9375": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.0625
+     }
+    }
+   },
+   "gilbert_elliott": {
+    "structure_ratio_shannon": 0.745738608338133,
+    "H12_process": 0.7217614562132408,
+    "H12_marginal": 0.34544670712755166,
+    "renyi_surcharge": 0.3763147490856892,
+    "feasibility": {
+     "R=0.75": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.25
+     },
+     "R=0.875": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.125
+     },
+     "R=0.9375": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.0625
+     }
+    }
+   },
+   "periodic_jitter": {
+    "structure_ratio_shannon": 0.6408493984951946,
+    "H12_process": 0.3614665662573594,
+    "H12_marginal": 0.7069440407144452,
+    "renyi_surcharge": -0.34547747445708576,
+    "feasibility": {
+     "R=0.75": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.25
+     },
+     "R=0.875": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.125
+     },
+     "R=0.9375": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.0625
+     }
+    }
+   },
+   "protocol_onoff": {
+    "structure_ratio_shannon": 0.5475626287722328,
+    "H12_process": 0.9203450592139212,
+    "H12_marginal": 0.554164094002041,
+    "renyi_surcharge": 0.36618096521188015,
+    "feasibility": {
+     "R=0.75": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.25
+     },
+     "R=0.875": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.125
+     },
+     "R=0.9375": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.0625
+     }
+    }
+   },
+   "lfsr_shortspan": {
+    "structure_ratio_shannon": 0.0003805060729465042,
+    "H12_process": 0.003987274524360399,
+    "H12_marginal": 0.9999089882969376,
+    "renyi_surcharge": -0.9959217137725772,
+    "feasibility": {
+     "R=0.75": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.25
+     },
+     "R=0.875": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.125
+     },
+     "R=0.9375": {
+      "hrate_le_half_budget": true,
+      "budget_1minusR": 0.0625
+     }
+    }
+   },
+   "lfsr_longspan": {
+    "structure_ratio_shannon": 0.9999999786533753,
+    "H12_process": 0.9999999892384034,
+    "H12_marginal": 0.9999999999160242,
+    "renyi_surcharge": -1.0677620787546971e-08,
+    "feasibility": {
+     "R=0.75": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.25
+     },
+     "R=0.875": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.125
+     },
+     "R=0.9375": {
+      "hrate_le_half_budget": false,
+      "budget_1minusR": 0.0625
+     }
+    }
+   }
+  },
+  "note": "X1 is adjudicated on PROXY generative models here; final X1 status requires real post-front-end traces dropped into data/user_traces/*.npy"
+ },
+ "verdict_scorecard.json": {
+  "cruxes": {
+   "X1": {
+    "status": "PASS_PROVISIONAL",
+    "passing_models": [
+     "markov_bursty",
+     "lfsr_shortspan"
+    ],
+    "renyi_surcharge_by_model": {
+     "markov_mild": 0.032735129021502773,
+     "markov_bursty": -0.04743540194172918,
+     "gilbert_elliott": 0.3763147490856892,
+     "periodic_jitter": -0.34547747445708576,
+     "protocol_onoff": 0.36618096521188015,
+     "lfsr_shortspan": -0.9959217137725772
+    },
+    "user_traces_present": false
+   },
+   "X2": {
+    "status": "FAIL",
+    "defect_growth_slope": 1.146578428466212,
+    "mdl_coset_in_regime_success_kt": null,
+    "in_regime_samples_kt": 0,
+    "mdl_coset_lz": {
+     "bins": [
+      {
+       "lo": 0.0,
+       "hi": 0.35,
+       "succ": 0,
+       "tot": 0,
+       "success_rate": null
+      },
+      {
+       "lo": 0.35,
+       "hi": 0.5,
+       "succ": 0,
+       "tot": 0,
+       "success_rate": null
+      },
+      {
+       "lo": 0.5,
+       "hi": 0.7,
+       "succ": 0,
+       "tot": 0,
+       "success_rate": null
+      },
+      {
+       "lo": 0.7,
+       "hi": 10.0,
+       "succ": 415,
+       "tot": 900,
+       "success_rate": 0.46111111111111114
+      }
+     ],
+     "success_rate_in_regime": null,
+     "in_regime_samples": 0
+    },
+    "dmin_vs_redundancy": [
+     {
+      "n": 16,
+      "k": 8,
+      "redundancy": 8,
+      "dmin_LZ_mean": 18.066666666666666,
+      "dmin_KT_mean": 11.411825157459042,
+      "dmin_KT_min": 9.721268679503597
+     },
+     {
+      "n": 20,
+      "k": 10,
+      "redundancy": 10,
+      "dmin_LZ_mean": 20.666666666666668,
+      "dmin_KT_mean": 13.336229285549694,
+      "dmin_KT_min": 8.991117321685573
+     },
+     {
+      "n": 24,
+      "k": 12,
+      "redundancy": 12,
+      "dmin_LZ_mean": 24.75,
+      "dmin_KT_mean": 15.765147394205343,
+      "dmin_KT_min": 10.737362605214669
+     },
+     {
+      "n": 28,
+      "k": 14,
+      "redundancy": 14,
+      "dmin_LZ_mean": 27.5,
+      "dmin_KT_mean": 17.808710686087217,
+      "dmin_KT_min": 14.011382448494274
+     },
+     {
+      "n": 32,
+      "k": 16,
+      "redundancy": 16,
+      "dmin_LZ_mean": 31.0,
+      "dmin_KT_mean": 20.649589665633982,
+      "dmin_KT_min": 19.202535971801215
+     }
+    ]
+   },
+   "X3": {
+    "status": "PASS",
+    "kt_gap_per_n_by_n": [
+     0.48333128264100056,
+     0.43271369448279834,
+     0.42018071849028904,
+     0.4215353474327649
+    ],
+    "lz_gap_per_n_by_n": [
+     0.7660537564951997,
+     0.8631373202532208,
+     0.8245403173713998,
+     0.8381923800694634
+    ],
+    "link1_slack_large_n": [
+     {
+      "n": 512,
+      "adv_slack_bits_per_symbol": 0.44059229006095346
+     },
+     {
+      "n": 2048,
+      "adv_slack_bits_per_symbol": 0.27322983858044
+     },
+     {
+      "n": 8192,
+      "adv_slack_bits_per_symbol": 0.16059222862080133
+     }
+    ]
+   },
+   "X4": {
+    "status": "AMBIGUOUS",
+    "passing_points": 0,
+    "points": [
+     {
+      "kappa": 1.5,
+      "oracle_bler": 0.11869436201780416,
+      "universal_bler": 0.4444444444444444,
+      "interleaved_bler": 0.9090909090909091,
+      "universal_q_med": 67.5,
+      "point_pass": false,
+      "in_window": false
+     },
+     {
+      "kappa": 2.2,
+      "oracle_bler": 0.21052631578947367,
+      "universal_bler": 0.5333333333333333,
+      "interleaved_bler": 1.0,
+      "universal_q_med": 837.0,
+      "point_pass": false,
+      "in_window": false
+     },
+     {
+      "kappa": 3.0,
+      "oracle_bler": 0.29411764705882354,
+      "universal_bler": 0.5714285714285714,
+      "interleaved_bler": 1.0,
+      "universal_q_med": 837.0,
+      "point_pass": false,
+      "in_window": false
+     },
+     {
+      "kappa": 3.6,
+      "oracle_bler": 0.45977011494252873,
+      "universal_bler": 0.6153846153846154,
+      "interleaved_bler": 1.0,
+      "universal_q_med": 837.0,
+      "point_pass": false,
+      "in_window": false
+     }
+    ],
+    "ge_cell": {
+     "params": {
+      "pg": 0.001,
+      "pb": 0.35,
+      "g2b": 0.008,
+      "b2g": 0.15
+     },
+     "marginal_flip": 0.018670886075949366,
+     "res": {
+      "oracle_ge": {
+       "blocks": 160,
+       "errors": 40,
+       "bler": 0.25,
+       "cap_rate": 0.25,
+       "q_med": 72.0,
+       "q_p90": 2884.0
+      },
+      "universal_kt": {
+       "blocks": 116,
+       "errors": 40,
+       "bler": 0.3448275862068966,
+       "cap_rate": 0.3448275862068966,
+       "q_med": 72.5,
+       "q_p90": 837.0
+      },
+      "iid_matched_interleaved": {
+       "blocks": 63,
+       "errors": 40,
+       "bler": 0.6349206349206349,
+       "cap_rate": 0.6349206349206349,
+       "q_med": 129.0,
+       "q_p90": 129.0
+      }
+     }
+    }
+   },
+   "X5": {
+    "status": "FAIL",
+    "fitted_over_universal_bler_ratio": 0.7520661157024794,
+    "detail": {
+     "pre": [
+      0.003,
+      0.85
+     ],
+     "post": [
+      0.008,
+      0.55
+     ],
+     "bler_fitted_static": 0.30333333333333334,
+     "bler_universal": 0.4033333333333333,
+     "blocks": 300
+    }
+   }
+  },
+  "controls": {
+   "positive_ok": true,
+   "negative_note": "PRNG jam: expected high queries / errors (vacuity boundary of the competitive claim)",
+   "negative_median_q": 2161.0
+  },
+  "notes": [],
+  "mechanical_recommendation": "PIVOT(drop effective DL geometry; keep Pillars I/II)",
+  "crux_status_summary": {
+   "X1": "PASS_PROVISIONAL",
+   "X2": "FAIL",
+   "X3": "PASS",
+   "X4": "AMBIGUOUS",
+   "X5": "FAIL"
+  }
+ },
+ "x4_resolution.json": {
+  "pooled_points": [
+   {
+    "kappa": 1.5,
+    "oracle_bler": 0.11869436201780416,
+    "universal_bler": 0.4444444444444444,
+    "interleaved_bler": 0.9090909090909091,
+    "universal_q_med": 67.5,
+    "universal_cap_rate": 0.4444444444444444,
+    "blocks_oracle": 337,
+    "in_window": false,
+    "point_pass": false
+   },
+   {
+    "kappa": 2.2,
+    "oracle_bler": 0.21052631578947367,
+    "universal_bler": 0.5333333333333333,
+    "interleaved_bler": 1.0,
+    "universal_q_med": 837.0,
+    "universal_cap_rate": 0.5333333333333333,
+    "blocks_oracle": 190,
+    "in_window": false,
+    "point_pass": false
+   },
+   {
+    "kappa": 3.0,
+    "oracle_bler": 0.29411764705882354,
+    "universal_bler": 0.5714285714285714,
+    "interleaved_bler": 1.0,
+    "universal_q_med": 837.0,
+    "universal_cap_rate": 0.5714285714285714,
+    "blocks_oracle": 136,
+    "in_window": false,
+    "point_pass": false
+   },
+   {
+    "kappa": 3.6,
+    "oracle_bler": 0.45977011494252873,
+    "universal_bler": 0.6153846153846154,
+    "interleaved_bler": 1.0,
+    "universal_q_med": 837.0,
+    "universal_cap_rate": 0.6153846153846154,
+    "blocks_oracle": 87,
+    "in_window": false,
+    "point_pass": false
+   },
+   {
+    "kappa": 2.5,
+    "oracle_bler": 0.2764976958525346,
+    "universal_bler": 0.5825242718446602,
+    "interleaved_bler": 0.9836065573770492,
+    "universal_q_med": 837.0,
+    "universal_cap_rate": 0.5825242718446602,
+    "blocks_oracle": 217,
+    "in_window": false,
+    "point_pass": false
+   },
+   {
+    "kappa": 2.8,
+    "oracle_bler": 0.25316455696202533,
+    "universal_bler": 0.5825242718446602,
+    "interleaved_bler": 0.9836065573770492,
+    "universal_q_med": 837.0,
+    "universal_cap_rate": 0.5825242718446602,
+    "blocks_oracle": 237,
+    "in_window": false,
+    "point_pass": false
+   }
+  ],
+  "passing_points": 0,
+  "X4_status_pooled": "AMBIGUOUS",
+  "note": "Pooled over original K4 cells and the K4b window cells; same frozen thresholds; original results untouched."
+ }
+}

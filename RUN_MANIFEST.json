@@ -21,5 +21,16 @@
   "X3": "PASS",
   "X4": "AMBIGUOUS",
   "X5": "FAIL"
+ },
+ "k4b_window": {
+  "seed": 20260811,
+  "kappas": [
+   2.5,
+   2.8
+  ],
+  "blocks": 2000,
+  "runtime_s": 517.7,
+  "X4_status_pooled": "AMBIGUOUS",
+  "reason": "AMBIGUOUS meant zero in-window operating points (grid straddled the window); this is the pre-registered escalation, not a threshold change."
  }
 }

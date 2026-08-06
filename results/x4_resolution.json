@@ -1,0 +1,73 @@
+{
+ "pooled_points": [
+  {
+   "kappa": 1.5,
+   "oracle_bler": 0.11869436201780416,
+   "universal_bler": 0.4444444444444444,
+   "interleaved_bler": 0.9090909090909091,
+   "universal_q_med": 67.5,
+   "universal_cap_rate": 0.4444444444444444,
+   "blocks_oracle": 337,
+   "in_window": false,
+   "point_pass": false
+  },
+  {
+   "kappa": 2.2,
+   "oracle_bler": 0.21052631578947367,
+   "universal_bler": 0.5333333333333333,
+   "interleaved_bler": 1.0,
+   "universal_q_med": 837.0,
+   "universal_cap_rate": 0.5333333333333333,
+   "blocks_oracle": 190,
+   "in_window": false,
+   "point_pass": false
+  },
+  {
+   "kappa": 3.0,
+   "oracle_bler": 0.29411764705882354,
+   "universal_bler": 0.5714285714285714,
+   "interleaved_bler": 1.0,
+   "universal_q_med": 837.0,
+   "universal_cap_rate": 0.5714285714285714,
+   "blocks_oracle": 136,
+   "in_window": false,
+   "point_pass": false
+  },
+  {
+   "kappa": 3.6,
+   "oracle_bler": 0.45977011494252873,
+   "universal_bler": 0.6153846153846154,
+   "interleaved_bler": 1.0,
+   "universal_q_med": 837.0,
+   "universal_cap_rate": 0.6153846153846154,
+   "blocks_oracle": 87,
+   "in_window": false,
+   "point_pass": false
+  },
+  {
+   "kappa": 2.5,
+   "oracle_bler": 0.2764976958525346,
+   "universal_bler": 0.5825242718446602,
+   "interleaved_bler": 0.9836065573770492,
+   "universal_q_med": 837.0,
+   "universal_cap_rate": 0.5825242718446602,
+   "blocks_oracle": 217,
+   "in_window": false,
+   "point_pass": false
+  },
+  {
+   "kappa": 2.8,
+   "oracle_bler": 0.25316455696202533,
+   "universal_bler": 0.5825242718446602,
+   "interleaved_bler": 0.9836065573770492,
+   "universal_q_med": 837.0,
+   "universal_cap_rate": 0.5825242718446602,
+   "blocks_oracle": 237,
+   "in_window": false,
+   "point_pass": false
+  }
+ ],
+ "passing_points": 0,
+ "X4_status_pooled": "AMBIGUOUS",
+ "note": "Pooled over original K4 cells and the K4b window cells; same frozen thresholds; original results untouched."
+}
