@@ -1,0 +1,54 @@
+{
+ "exhaustive_vs_2state": [
+  {
+   "nbits": 12,
+   "worst_gap_lz_bits": 9.192645077942396,
+   "worst_gap_lz_per_n": 0.7660537564951997,
+   "worst_gap_kt_bits": 5.799975391692007,
+   "worst_gap_kt_per_n": 0.48333128264100056,
+   "worst_seq_kt": "000000001111",
+   "mean_gap_kt_per_n": 0.11247983150702216
+  },
+  {
+   "nbits": 14,
+   "worst_gap_lz_bits": 12.083922483545091,
+   "worst_gap_lz_per_n": 0.8631373202532208,
+   "worst_gap_kt_bits": 6.057991722759176,
+   "worst_gap_kt_per_n": 0.43271369448279834,
+   "worst_seq_kt": "00000000011111",
+   "mean_gap_kt_per_n": 0.09985408022404203
+  },
+  {
+   "nbits": 16,
+   "worst_gap_lz_bits": 13.192645077942396,
+   "worst_gap_lz_per_n": 0.8245403173713998,
+   "worst_gap_kt_bits": 6.722891495844625,
+   "worst_gap_kt_per_n": 0.42018071849028904,
+   "worst_seq_kt": "1010101011101110",
+   "mean_gap_kt_per_n": 0.09058903529240314
+  },
+  {
+   "nbits": 18,
+   "worst_gap_lz_bits": 15.08746284125034,
+   "worst_gap_lz_per_n": 0.8381923800694634,
+   "worst_gap_kt_bits": 7.587636253789768,
+   "worst_gap_kt_per_n": 0.4215353474327649,
+   "worst_seq_kt": "101010101011101110",
+   "mean_gap_kt_per_n": 0.08250421466863453
+  }
+ ],
+ "large_n_link1_slack": [
+  {
+   "n": 512,
+   "adv_slack_bits_per_symbol": 0.44059229006095346
+  },
+  {
+   "n": 2048,
+   "adv_slack_bits_per_symbol": 0.27322983858044
+  },
+  {
+   "n": 8192,
+   "adv_slack_bits_per_symbol": 0.16059222862080133
+  }
+ ]
+}

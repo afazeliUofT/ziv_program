@@ -1,0 +1,40 @@
+{
+ "positive": [
+  {
+   "n": 64,
+   "median_q": 3.5,
+   "mean_q": 324.4266666666667,
+   "ref_log2_mean_q_H12": 16.757032671504543,
+   "ref_log2_median_q_H": 5.170760697338316,
+   "note": "uncapped MEAN queries track n*H_{1/2}; MEDIAN tracks ~n*H (typical-set rank)",
+   "bler": 0.006666666666666667,
+   "capped": 0.0
+  },
+  {
+   "n": 96,
+   "median_q": 29.5,
+   "mean_q": 738.44,
+   "ref_log2_mean_q_H12": 25.135549007256813,
+   "ref_log2_median_q_H": 7.756141046007473,
+   "note": "uncapped MEAN queries track n*H_{1/2}; MEDIAN tracks ~n*H (typical-set rank)",
+   "bler": 0.08,
+   "capped": 0.08
+  },
+  {
+   "n": 128,
+   "median_q": 87.5,
+   "mean_q": 2528.82,
+   "ref_log2_mean_q_H12": 33.51406534300909,
+   "ref_log2_median_q_H": 10.341521394676631,
+   "note": "uncapped MEAN queries track n*H_{1/2}; MEDIAN tracks ~n*H (typical-set rank)",
+   "bler": 0.2,
+   "capped": 0.2
+  }
+ ],
+ "negative": {
+  "n": 128,
+  "median_q": 2161.0,
+  "bler": 1.0,
+  "note": "PRNG jam: expected high queries / errors (vacuity boundary of the competitive claim)"
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "family": [
+  {
+   "n": 256,
+   "family_max_defect": -89,
+   "family_med_defect": -107.0
+  },
+  {
+   "n": 1024,
+   "family_max_defect": -209,
+   "family_med_defect": -274.0
+  },
+  {
+   "n": 4096,
+   "family_max_defect": -459,
+   "family_med_defect": -632.0
+  },
+  {
+   "n": 16384,
+   "family_max_defect": 110,
+   "family_med_defect": -1508.0
+  }
+ ],
+ "adversarial": [
+  {
+   "n": 256,
+   "adv_max_defect": -84.0,
+   "adv_max_defect_per_n": -0.328125
+  },
+  {
+   "n": 1024,
+   "adv_max_defect": -171.0,
+   "adv_max_defect_per_n": -0.1669921875
+  },
+  {
+   "n": 4096,
+   "adv_max_defect": -354.0,
+   "adv_max_defect_per_n": -0.08642578125
+  },
+  {
+   "n": 16384,
+   "adv_max_defect": 200.0,
+   "adv_max_defect_per_n": 0.01220703125
+  }
+ ],
+ "defect_growth_slope": 1.146578428466212
+}

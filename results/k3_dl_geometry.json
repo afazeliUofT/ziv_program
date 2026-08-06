@@ -1,0 +1,118 @@
+{
+ "dl_gv": [
+  {
+   "n": 16,
+   "k": 8,
+   "redundancy": 8,
+   "dmin_LZ_mean": 18.066666666666666,
+   "dmin_KT_mean": 11.411825157459042,
+   "dmin_KT_min": 9.721268679503597
+  },
+  {
+   "n": 20,
+   "k": 10,
+   "redundancy": 10,
+   "dmin_LZ_mean": 20.666666666666668,
+   "dmin_KT_mean": 13.336229285549694,
+   "dmin_KT_min": 8.991117321685573
+  },
+  {
+   "n": 24,
+   "k": 12,
+   "redundancy": 12,
+   "dmin_LZ_mean": 24.75,
+   "dmin_KT_mean": 15.765147394205343,
+   "dmin_KT_min": 10.737362605214669
+  },
+  {
+   "n": 28,
+   "k": 14,
+   "redundancy": 14,
+   "dmin_LZ_mean": 27.5,
+   "dmin_KT_mean": 17.808710686087217,
+   "dmin_KT_min": 14.011382448494274
+  },
+  {
+   "n": 32,
+   "k": 16,
+   "redundancy": 16,
+   "dmin_LZ_mean": 31.0,
+   "dmin_KT_mean": 20.649589665633982,
+   "dmin_KT_min": 19.202535971801215
+  }
+ ],
+ "mdl_coset": {
+  "n": 24,
+  "k": 12,
+  "dmin_LZ": 25,
+  "dmin_KT": 15.343421930692317,
+  "kt": {
+   "bins": [
+    {
+     "lo": 0.0,
+     "hi": 0.35,
+     "succ": 0,
+     "tot": 0,
+     "success_rate": null
+    },
+    {
+     "lo": 0.35,
+     "hi": 0.5,
+     "succ": 0,
+     "tot": 0,
+     "success_rate": null
+    },
+    {
+     "lo": 0.5,
+     "hi": 0.7,
+     "succ": 139,
+     "tot": 139,
+     "success_rate": 1.0
+    },
+    {
+     "lo": 0.7,
+     "hi": 10.0,
+     "succ": 579,
+     "tot": 761,
+     "success_rate": 0.7608409986859396
+    }
+   ],
+   "success_rate_in_regime": null,
+   "in_regime_samples": 0
+  },
+  "lz": {
+   "bins": [
+    {
+     "lo": 0.0,
+     "hi": 0.35,
+     "succ": 0,
+     "tot": 0,
+     "success_rate": null
+    },
+    {
+     "lo": 0.35,
+     "hi": 0.5,
+     "succ": 0,
+     "tot": 0,
+     "success_rate": null
+    },
+    {
+     "lo": 0.5,
+     "hi": 0.7,
+     "succ": 0,
+     "tot": 0,
+     "success_rate": null
+    },
+    {
+     "lo": 0.7,
+     "hi": 10.0,
+     "succ": 415,
+     "tot": 900,
+     "success_rate": 0.46111111111111114
+    }
+   ],
+   "success_rate_in_regime": null,
+   "in_regime_samples": 0
+  }
+ }
+}

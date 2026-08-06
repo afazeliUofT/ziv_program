@@ -1,0 +1,239 @@
+{
+ "cruxes": {
+  "X1": {
+   "status": "PASS_PROVISIONAL",
+   "passing_models": [
+    "markov_bursty",
+    "lfsr_shortspan"
+   ],
+   "renyi_surcharge_by_model": {
+    "markov_mild": 0.032735129021502773,
+    "markov_bursty": -0.04743540194172918,
+    "gilbert_elliott": 0.3763147490856892,
+    "periodic_jitter": -0.34547747445708576,
+    "protocol_onoff": 0.36618096521188015,
+    "lfsr_shortspan": -0.9959217137725772
+   },
+   "user_traces_present": false
+  },
+  "X2": {
+   "status": "FAIL",
+   "defect_growth_slope": 1.146578428466212,
+   "mdl_coset_in_regime_success_kt": null,
+   "in_regime_samples_kt": 0,
+   "mdl_coset_lz": {
+    "bins": [
+     {
+      "lo": 0.0,
+      "hi": 0.35,
+      "succ": 0,
+      "tot": 0,
+      "success_rate": null
+     },
+     {
+      "lo": 0.35,
+      "hi": 0.5,
+      "succ": 0,
+      "tot": 0,
+      "success_rate": null
+     },
+     {
+      "lo": 0.5,
+      "hi": 0.7,
+      "succ": 0,
+      "tot": 0,
+      "success_rate": null
+     },
+     {
+      "lo": 0.7,
+      "hi": 10.0,
+      "succ": 415,
+      "tot": 900,
+      "success_rate": 0.46111111111111114
+     }
+    ],
+    "success_rate_in_regime": null,
+    "in_regime_samples": 0
+   },
+   "dmin_vs_redundancy": [
+    {
+     "n": 16,
+     "k": 8,
+     "redundancy": 8,
+     "dmin_LZ_mean": 18.066666666666666,
+     "dmin_KT_mean": 11.411825157459042,
+     "dmin_KT_min": 9.721268679503597
+    },
+    {
+     "n": 20,
+     "k": 10,
+     "redundancy": 10,
+     "dmin_LZ_mean": 20.666666666666668,
+     "dmin_KT_mean": 13.336229285549694,
+     "dmin_KT_min": 8.991117321685573
+    },
+    {
+     "n": 24,
+     "k": 12,
+     "redundancy": 12,
+     "dmin_LZ_mean": 24.75,
+     "dmin_KT_mean": 15.765147394205343,
+     "dmin_KT_min": 10.737362605214669
+    },
+    {
+     "n": 28,
+     "k": 14,
+     "redundancy": 14,
+     "dmin_LZ_mean": 27.5,
+     "dmin_KT_mean": 17.808710686087217,
+     "dmin_KT_min": 14.011382448494274
+    },
+    {
+     "n": 32,
+     "k": 16,
+     "redundancy": 16,
+     "dmin_LZ_mean": 31.0,
+     "dmin_KT_mean": 20.649589665633982,
+     "dmin_KT_min": 19.202535971801215
+    }
+   ]
+  },
+  "X3": {
+   "status": "PASS",
+   "kt_gap_per_n_by_n": [
+    0.48333128264100056,
+    0.43271369448279834,
+    0.42018071849028904,
+    0.4215353474327649
+   ],
+   "lz_gap_per_n_by_n": [
+    0.7660537564951997,
+    0.8631373202532208,
+    0.8245403173713998,
+    0.8381923800694634
+   ],
+   "link1_slack_large_n": [
+    {
+     "n": 512,
+     "adv_slack_bits_per_symbol": 0.44059229006095346
+    },
+    {
+     "n": 2048,
+     "adv_slack_bits_per_symbol": 0.27322983858044
+    },
+    {
+     "n": 8192,
+     "adv_slack_bits_per_symbol": 0.16059222862080133
+    }
+   ]
+  },
+  "X4": {
+   "status": "AMBIGUOUS",
+   "passing_points": 0,
+   "points": [
+    {
+     "kappa": 1.5,
+     "oracle_bler": 0.11869436201780416,
+     "universal_bler": 0.4444444444444444,
+     "interleaved_bler": 0.9090909090909091,
+     "universal_q_med": 67.5,
+     "point_pass": false,
+     "in_window": false
+    },
+    {
+     "kappa": 2.2,
+     "oracle_bler": 0.21052631578947367,
+     "universal_bler": 0.5333333333333333,
+     "interleaved_bler": 1.0,
+     "universal_q_med": 837.0,
+     "point_pass": false,
+     "in_window": false
+    },
+    {
+     "kappa": 3.0,
+     "oracle_bler": 0.29411764705882354,
+     "universal_bler": 0.5714285714285714,
+     "interleaved_bler": 1.0,
+     "universal_q_med": 837.0,
+     "point_pass": false,
+     "in_window": false
+    },
+    {
+     "kappa": 3.6,
+     "oracle_bler": 0.45977011494252873,
+     "universal_bler": 0.6153846153846154,
+     "interleaved_bler": 1.0,
+     "universal_q_med": 837.0,
+     "point_pass": false,
+     "in_window": false
+    }
+   ],
+   "ge_cell": {
+    "params": {
+     "pg": 0.001,
+     "pb": 0.35,
+     "g2b": 0.008,
+     "b2g": 0.15
+    },
+    "marginal_flip": 0.018670886075949366,
+    "res": {
+     "oracle_ge": {
+      "blocks": 160,
+      "errors": 40,
+      "bler": 0.25,
+      "cap_rate": 0.25,
+      "q_med": 72.0,
+      "q_p90": 2884.0
+     },
+     "universal_kt": {
+      "blocks": 116,
+      "errors": 40,
+      "bler": 0.3448275862068966,
+      "cap_rate": 0.3448275862068966,
+      "q_med": 72.5,
+      "q_p90": 837.0
+     },
+     "iid_matched_interleaved": {
+      "blocks": 63,
+      "errors": 40,
+      "bler": 0.6349206349206349,
+      "cap_rate": 0.6349206349206349,
+      "q_med": 129.0,
+      "q_p90": 129.0
+     }
+    }
+   }
+  },
+  "X5": {
+   "status": "FAIL",
+   "fitted_over_universal_bler_ratio": 0.7520661157024794,
+   "detail": {
+    "pre": [
+     0.003,
+     0.85
+    ],
+    "post": [
+     0.008,
+     0.55
+    ],
+    "bler_fitted_static": 0.30333333333333334,
+    "bler_universal": 0.4033333333333333,
+    "blocks": 300
+   }
+  }
+ },
+ "controls": {
+  "positive_ok": true,
+  "negative_note": "PRNG jam: expected high queries / errors (vacuity boundary of the competitive claim)",
+  "negative_median_q": 2161.0
+ },
+ "notes": [],
+ "mechanical_recommendation": "PIVOT(drop effective DL geometry; keep Pillars I/II)",
+ "crux_status_summary": {
+  "X1": "PASS_PROVISIONAL",
+  "X2": "FAIL",
+  "X3": "PASS",
+  "X4": "AMBIGUOUS",
+  "X5": "FAIL"
+ }
+}

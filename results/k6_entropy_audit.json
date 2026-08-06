@@ -1,0 +1,272 @@
+{
+ "models": {
+  "iid_p03": {
+   "estimated": {
+    "marginal": 0.19277619899934884,
+    "rate_plugin": 0.19261517843845954,
+    "renyi12_rate_plugin": 0.4050630664510225,
+    "renyi12_marginal": 0.42158338586689537,
+    "lz_ratio": 0.2695770263671875,
+    "p1": 0.0296783447265625,
+    "n": 131072
+   }
+  },
+  "markov_mild": {
+   "estimated": {
+    "marginal": 0.07503649987088204,
+    "rate_plugin": 0.06086541308511082,
+    "renyi12_rate_plugin": 0.2840979646438133,
+    "renyi12_marginal": 0.25136283562231054,
+    "lz_ratio": 0.09735870361328125,
+    "p1": 0.0091400146484375,
+    "n": 131072
+   },
+   "exact": {
+    "marginal": 0.0750792681095351,
+    "rate": 0.06097440633598159,
+    "renyi12_rate": 0.31685471001830273,
+    "pi1": 0.009146341463414634
+   }
+  },
+  "markov_bursty": {
+   "estimated": {
+    "marginal": 0.09012317567225214,
+    "rate_plugin": 0.025014684763621134,
+    "renyi12_rate_plugin": 0.23065181374897797,
+    "renyi12_marginal": 0.27808721569070716,
+    "lz_ratio": 0.06453704833984375,
+    "p1": 0.0114288330078125,
+    "n": 131072
+   },
+   "exact": {
+    "marginal": 0.10106696361212415,
+    "rate": 0.0285644165115655,
+    "renyi12_rate": 0.2687217250941385,
+    "pi1": 0.013157894736842103
+   }
+  },
+  "gilbert_elliott": {
+   "estimated": {
+    "marginal": 0.13377058247539628,
+    "rate_plugin": 0.09975788801178347,
+    "renyi12_rate_plugin": 0.7217614562132408,
+    "renyi12_marginal": 0.34544670712755166,
+    "lz_ratio": 0.14478302001953125,
+    "p1": 0.018646240234375,
+    "n": 131072
+   },
+   "exact_bounds": {
+    "marginal_exact": 0.13391147894355046,
+    "rate_lower_bound_HgivenS": 0.05812473483305758
+   }
+  },
+  "periodic_jitter": {
+   "estimated": {
+    "marginal": 0.5078745671914708,
+    "rate_plugin": 0.3254711108956614,
+    "renyi12_rate_plugin": 0.3614665662573594,
+    "renyi12_marginal": 0.7069440407144452,
+    "lz_ratio": 0.36489105224609375,
+    "p1": 0.1126556396484375,
+    "n": 131072
+   }
+  },
+  "protocol_onoff": {
+   "estimated": {
+    "marginal": 0.32033771729148064,
+    "rate_plugin": 0.17540496257501947,
+    "renyi12_rate_plugin": 0.9203450592139212,
+    "renyi12_marginal": 0.554164094002041,
+    "lz_ratio": 0.236053466796875,
+    "p1": 0.05821990966796875,
+    "n": 131072
+   }
+  },
+  "lfsr_shortspan": {
+   "estimated": {
+    "marginal": 0.9998179861627531,
+    "rate_plugin": 0.00038043681557607147,
+    "renyi12_rate_plugin": 0.003987274524360399,
+    "renyi12_marginal": 0.9999089882969376,
+    "lz_ratio": 0.3445587158203125,
+    "p1": 0.5079421997070312,
+    "n": 131072
+   }
+  },
+  "lfsr_longspan": {
+   "estimated": {
+    "marginal": 0.9999999998320481,
+    "rate_plugin": 0.9999999784854234,
+    "renyi12_rate_plugin": 0.9999999892384034,
+    "renyi12_marginal": 0.9999999999160242,
+    "lz_ratio": 1.1557159423828125,
+    "p1": 0.5000076293945312,
+    "n": 131072
+   }
+  }
+ },
+ "user_traces": {},
+ "margins": {
+  "iid_p03": {
+   "structure_ratio_shannon": 0.9991647280020817,
+   "H12_process": 0.4050630664510225,
+   "H12_marginal": 0.42158338586689537,
+   "renyi_surcharge": -0.01652031941587284,
+   "feasibility": {
+    "R=0.75": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.25
+    },
+    "R=0.875": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.125
+    },
+    "R=0.9375": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.0625
+    }
+   }
+  },
+  "markov_mild": {
+   "structure_ratio_shannon": 0.8111440857428597,
+   "H12_process": 0.2840979646438133,
+   "H12_marginal": 0.25136283562231054,
+   "renyi_surcharge": 0.032735129021502773,
+   "feasibility": {
+    "R=0.75": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.25
+    },
+    "R=0.875": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.125
+    },
+    "R=0.9375": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.0625
+    }
+   }
+  },
+  "markov_bursty": {
+   "structure_ratio_shannon": 0.2775610665850389,
+   "H12_process": 0.23065181374897797,
+   "H12_marginal": 0.27808721569070716,
+   "renyi_surcharge": -0.04743540194172918,
+   "feasibility": {
+    "R=0.75": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.25
+    },
+    "R=0.875": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.125
+    },
+    "R=0.9375": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.0625
+    }
+   }
+  },
+  "gilbert_elliott": {
+   "structure_ratio_shannon": 0.745738608338133,
+   "H12_process": 0.7217614562132408,
+   "H12_marginal": 0.34544670712755166,
+   "renyi_surcharge": 0.3763147490856892,
+   "feasibility": {
+    "R=0.75": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.25
+    },
+    "R=0.875": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.125
+    },
+    "R=0.9375": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.0625
+    }
+   }
+  },
+  "periodic_jitter": {
+   "structure_ratio_shannon": 0.6408493984951946,
+   "H12_process": 0.3614665662573594,
+   "H12_marginal": 0.7069440407144452,
+   "renyi_surcharge": -0.34547747445708576,
+   "feasibility": {
+    "R=0.75": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.25
+    },
+    "R=0.875": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.125
+    },
+    "R=0.9375": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.0625
+    }
+   }
+  },
+  "protocol_onoff": {
+   "structure_ratio_shannon": 0.5475626287722328,
+   "H12_process": 0.9203450592139212,
+   "H12_marginal": 0.554164094002041,
+   "renyi_surcharge": 0.36618096521188015,
+   "feasibility": {
+    "R=0.75": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.25
+    },
+    "R=0.875": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.125
+    },
+    "R=0.9375": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.0625
+    }
+   }
+  },
+  "lfsr_shortspan": {
+   "structure_ratio_shannon": 0.0003805060729465042,
+   "H12_process": 0.003987274524360399,
+   "H12_marginal": 0.9999089882969376,
+   "renyi_surcharge": -0.9959217137725772,
+   "feasibility": {
+    "R=0.75": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.25
+    },
+    "R=0.875": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.125
+    },
+    "R=0.9375": {
+     "hrate_le_half_budget": true,
+     "budget_1minusR": 0.0625
+    }
+   }
+  },
+  "lfsr_longspan": {
+   "structure_ratio_shannon": 0.9999999786533753,
+   "H12_process": 0.9999999892384034,
+   "H12_marginal": 0.9999999999160242,
+   "renyi_surcharge": -1.0677620787546971e-08,
+   "feasibility": {
+    "R=0.75": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.25
+    },
+    "R=0.875": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.125
+    },
+    "R=0.9375": {
+     "hrate_le_half_budget": false,
+     "budget_1minusR": 0.0625
+    }
+   }
+  }
+ },
+ "note": "X1 is adjudicated on PROXY generative models here; final X1 status requires real post-front-end traces dropped into data/user_traces/*.npy"
+}

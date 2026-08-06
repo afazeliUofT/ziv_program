@@ -1,0 +1,44 @@
+{
+ "_provenance": "Frozen after apparatus smoke-validation (bug fixes to probe design), BEFORE the decisive full-scale run. Changing these after seeing full-scale results invalidates the protocol.",
+ "X1_entropy_premise": {
+  "min_models_passing": 2,
+  "shannon_structure_ratio_max": 0.6,
+  "hrate_budget_fraction_R075": 0.5,
+  "rule": "PASS_PROVISIONAL iff >=2 non-iid, non-PRNG proxy models have H_rate <= 0.6*H_marginal AND H_rate <= 0.5*(1-R) at R=0.75. Renyi-1/2 process and marginal rates are reported diagnostics (memory can carry a mean-guesswork surcharge; feasibility of typical guessing is Shannon-governed, tails managed by abandonment).",
+  "status_semantics": "PASS here is PROVISIONAL (proxies); terminal X1 requires real traces in data/user_traces/"
+ },
+ "X2_masking": {
+  "kill_slope_min": 0.95,
+  "pass_slope_max": 0.8,
+  "slope_comment": "Fitted log-log growth exponent of the worst positive adversarial masking defect vs n. >=0.95 (linear growth) = FAIL effective Pillar III; <=0.80 = PASS side condition; between = AMBIGUOUS.",
+  "mdl_coset_in_regime_success_min": 0.9,
+  "mdl_coset_min_samples": 15,
+  "mdl_comment": "Direct half-redundancy test with the KT-hierarchy exact codelength as the PRIMARY universal code at enumerable n (LZ78's absolute overhead at n<=32 empties the regime; its bins are reported as occupancy evidence). Success >= 0.90 over KT-trials with r = L(z)/d_L,min < 0.5, provided >= 15 such samples."
+ },
+ "X3_individual_sequence": {
+  "kill_rule": "worst_gap_kt_per_n strictly INCREASING across all tested n AND worst_gap_lz_per_n strictly increasing => FAIL (structural alarm for Link 2)",
+  "pass_rule": "worst_gap_kt_per_n non-increasing from smallest to largest tested n AND <= 0.45 at the largest n",
+  "kt_gap_max_at_largest_n": 0.45,
+  "comment": "Exhaustive exact guessing ranks vs the pointwise-min over ALL 2-state genie machines. LZ alone is expected to look poor at tiny n (O(loglog n/log n) redundancy); the KT-hierarchy trend is the decisive early signal."
+ },
+ "X4_finite_n_materialization": {
+  "universal_vs_oracle_bler_ratio_max": 2.0,
+  "interleaved_vs_universal_bler_ratio_min": 3.0,
+  "min_operating_points": 2,
+  "oracle_bler_window": [
+   0.001,
+   0.05
+  ],
+  "median_queries_max": 10000,
+  "comment": "At >= 2 operating points with oracle BLER in the window: universal BLER <= 2x oracle AND interleaved-baseline BLER >= 3x universal AND universal median queries <= 1e4. Laptop-scale surrogate of the P2 dB gate at n=128, R=0.75."
+ },
+ "X5_differentiation": {
+  "splice_bler_ratio_min": 3.0,
+  "comment": "Post-regime-splice, fitted-static BLER must exceed universal BLER by >= 3x, else the universality premium over cheap per-deployment fitting is undemonstrated and the headline pivots to online-adaptive decoding."
+ },
+ "verdict_logic": {
+  "STOP": "X3 FAIL (structural), OR (X2 FAIL AND X4 FAIL AND X1 FAIL_PROXY)",
+  "PIVOT": "X5 FAIL with X4 PASS -> online-adaptive reframe; X2 FAIL alone -> drop effective DL geometry, keep Pillars I/II; X4 FAIL alone -> storage/hybrid niche or asymptotic-theory-only",
+  "CONTINUE": "X2, X3, X4 PASS (X1 provisional acceptable pending real traces)"
+ }
+}

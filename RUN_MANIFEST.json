@@ -1,0 +1,25 @@
+{
+ "scale": "full",
+ "original_seed": 20260805,
+ "k4_rerun_seed": 20260809,
+ "k4_rerun_reason": "pre-observation patch: (a) pop budget 40x->8x+20k; (b) X5 splice post-regime (0.025,0.7)->(0.008,0.55) because the original was infeasible for every ranked guesser under the query cap (entropy rate 0.224, median rank ~2^29) and would have measured the cap, not the premium. K4 had produced no results before the patch. Thresholds unchanged.",
+ "timings_s": {
+  "k0_controls": 1384.43,
+  "k6_entropy_audit": 0.35,
+  "k2_masking": 9.11,
+  "k3_dl_geometry": 13.57,
+  "k5_individual": 297.8,
+  "k4_head_to_head_rerun": 1428.3,
+  "note": "K0-K5 timings as reported by the user's console from the original run (completed before the interrupt); their results files are unchanged."
+ },
+ "python": "3.12.3",
+ "numpy": "2.5.1",
+ "mechanical_recommendation": "PIVOT(drop effective DL geometry; keep Pillars I/II)",
+ "crux_status_summary": {
+  "X1": "PASS_PROVISIONAL",
+  "X2": "FAIL",
+  "X3": "PASS",
+  "X4": "AMBIGUOUS",
+  "X5": "FAIL"
+ }
+}
