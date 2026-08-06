@@ -1,0 +1,13 @@
+{
+ "scale": "full",
+ "seed": 20260819,
+ "timings_s": {
+  "w0": 0.4,
+  "w1": 1.8,
+  "w2": 2.6,
+  "w4": 0.0,
+  "w3": 4.9
+ },
+ "total_s": 9.7,
+ "extension_gate": "EXCHANGE_SUPPORTED_NO_COUNTEREXAMPLE"
+}

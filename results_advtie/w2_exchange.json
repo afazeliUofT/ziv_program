@@ -1,0 +1,9 @@
+{
+ "n": 12,
+ "types_above_threshold": 8042,
+ "failures": [],
+ "n_failures": 0,
+ "worst_minimal_drop_bits": 4.754887502163468,
+ "max_move_size_units": 4,
+ "verdict": "NO_COUNTEREXAMPLE_FOUND"
+}
