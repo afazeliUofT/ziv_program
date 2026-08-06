@@ -40,5 +40,15 @@
   "STOP": "X3 FAIL (structural), OR (X2 FAIL AND X4 FAIL AND X1 FAIL_PROXY)",
   "PIVOT": "X5 FAIL with X4 PASS -> online-adaptive reframe; X2 FAIL alone -> drop effective DL geometry, keep Pillars I/II; X4 FAIL alone -> storage/hybrid niche or asymptotic-theory-only",
   "CONTINUE": "X2, X3, X4 PASS (X1 provisional acceptable pending real traces)"
+ },
+ "X1_terminal": {
+  "frozen": "2026-08-05, before any real trace was collected",
+  "min_len": 32768,
+  "p1_floor": 0.0005,
+  "p1_ceiling": 0.2,
+  "structure_ratio_pass_max": 0.6,
+  "hrate_budget_R075": 0.125,
+  "structure_ratio_fail_min": 0.85,
+  "strong_pass_min_sources": 2
  }
 }

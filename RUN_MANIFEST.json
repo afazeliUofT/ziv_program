@@ -39,5 +39,10 @@
   "X4_status_v2": "PASS",
   "X5_status_v2": "FAIL",
   "note": "apparatus repaired; k4/k4b void; see results/apparatus_audit.json"
+ },
+ "x1_terminal": {
+  "status": "NO_DATA",
+  "n_traces": 0,
+  "time": "2026-08-06 00:14"
  }
 }

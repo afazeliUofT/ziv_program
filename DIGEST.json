@@ -3376,5 +3376,20 @@
    }
   ],
   "reading": "total slack is ZL-dominated at these n; the proven counting envelope is the minor term"
+ },
+ "x1_terminal.json": {
+  "gate": {
+   "frozen": "2026-08-05, before any real trace was collected",
+   "min_len": 32768,
+   "p1_floor": 0.0005,
+   "p1_ceiling": 0.2,
+   "structure_ratio_pass_max": 0.6,
+   "hrate_budget_R075": 0.125,
+   "structure_ratio_fail_min": 0.85,
+   "strong_pass_min_sources": 2
+  },
+  "traces": [],
+  "X1_terminal_status": "NO_DATA",
+  "timestamp": "2026-08-06 00:14"
  }
 }
