@@ -1,0 +1,10 @@
+{
+ "scale": "full",
+ "seed": 20260825,
+ "timings_s": {
+  "frontier": 0.4,
+  "b1": 44.3,
+  "b2": 0.1
+ },
+ "total_s": 44.7
+}

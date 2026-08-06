@@ -1,0 +1,21 @@
+{
+ "B1": {
+  "total_types": 352207,
+  "anchored": 134982,
+  "anchored_fraction": 0.38324621600365694,
+  "residual": 217225,
+  "residual_mechanisms": {
+   "1": 174665,
+   "2": 32768,
+   "3": 9792,
+   "4": 0,
+   "5": 0
+  }
+ },
+ "B2": {
+  "anchored_sampled": 400,
+  "AL_move_succeeds": 340,
+  "note": "verifies the theorem's SPECIFIC move, not just some move; failures indicate clean-cycle availability below the k*>=2s+2 regime at these n"
+ },
+ "b_gate": "ANCHORING_MEASURED"
+}

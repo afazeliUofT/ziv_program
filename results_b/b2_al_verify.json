@@ -1,0 +1,5 @@
+{
+ "anchored_sampled": 400,
+ "AL_move_succeeds": 340,
+ "note": "verifies the theorem's SPECIFIC move, not just some move; failures indicate clean-cycle availability below the k*>=2s+2 regime at these n"
+}
