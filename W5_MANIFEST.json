@@ -1,0 +1,12 @@
+{
+ "scale": "full",
+ "seed": 20260821,
+ "timings_s": {
+  "frontier": 0.4,
+  "w5a": 10.0,
+  "w5b": 5.2,
+  "w5c": 0.3
+ },
+ "total_s": 15.9,
+ "certification_gate": "L2_CERTIFIED_FULL_CENSUS"
+}

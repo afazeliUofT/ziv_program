@@ -1,0 +1,13 @@
+{
+ "total_types": 111780,
+ "n_failures": 0,
+ "failures": [],
+ "coverage": {
+  "within_flip": 90356,
+  "cross_single": 16019,
+  "pair": 5405,
+  "cycle": 0
+ },
+ "max_radius": 4,
+ "certified": true
+}
