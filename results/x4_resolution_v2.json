@@ -1,0 +1,43 @@
+{
+ "points": [
+  {
+   "kappa": 0.7,
+   "oracle_bler": 0.028000000000000025,
+   "universal_bler": 0.028000000000000025,
+   "interleaved_bler": 0.2388,
+   "q_med": 1.0,
+   "in_window": true,
+   "point_pass": true
+  },
+  {
+   "kappa": 0.85,
+   "oracle_bler": 0.03600000000000003,
+   "universal_bler": 0.04239999999999999,
+   "interleaved_bler": 0.356,
+   "q_med": 1.0,
+   "in_window": true,
+   "point_pass": true
+  },
+  {
+   "kappa": 1.0,
+   "oracle_bler": 0.05479999999999996,
+   "universal_bler": 0.06879999999999997,
+   "interleaved_bler": 0.4384,
+   "q_med": 1.0,
+   "in_window": false,
+   "point_pass": false
+  },
+  {
+   "kappa": 1.2,
+   "oracle_bler": 0.0696,
+   "universal_bler": 0.07720000000000005,
+   "interleaved_bler": 0.5564,
+   "q_med": 1.0,
+   "in_window": false,
+   "point_pass": false
+  }
+ ],
+ "passing_points": 2,
+ "X4_status_v2": "PASS",
+ "note": "k4c cells only; k4/k4b VOID (apparatus)"
+}

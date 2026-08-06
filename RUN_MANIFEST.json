@@ -32,5 +32,12 @@
   "runtime_s": 517.7,
   "X4_status_pooled": "AMBIGUOUS",
   "reason": "AMBIGUOUS meant zero in-window operating points (grid straddled the window); this is the pre-registered escalation, not a threshold change."
+ },
+ "k4c": {
+  "seed": 20260813,
+  "runtime_s": 265.4,
+  "X4_status_v2": "PASS",
+  "X5_status_v2": "FAIL",
+  "note": "apparatus repaired; k4/k4b void; see results/apparatus_audit.json"
  }
 }

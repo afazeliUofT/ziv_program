@@ -1,0 +1,238 @@
+{
+ "config": {
+  "n": 128,
+  "m": 32,
+  "R": 0.75,
+  "a": 0.85,
+  "cap": 30000,
+  "blocks": 2500,
+  "kappas": [
+   0.7,
+   0.85,
+   1.0,
+   1.2
+  ],
+  "seed": 20260813
+ },
+ "canary": {
+  "iid_matched": {
+   "predicted_miss_exact": 0.025430198169642648,
+   "blocks": 1200,
+   "bler": 0.02083333333333337,
+   "cap_rate": 0.020833333333333332,
+   "q_med": 1.0,
+   "q_p90": 1203.3000000000168
+  },
+  "markov_matched": {
+   "predicted_miss_exact": 0.19525617517921512,
+   "blocks": 1200,
+   "bler": 0.1808333333333333,
+   "cap_rate": 0.18083333333333335,
+   "q_med": 211.5,
+   "q_p90": 30000.0
+  }
+ },
+ "cells": [
+  {
+   "kappa": 0.7,
+   "b": 0.0021,
+   "rates": {
+    "marginal": 0.10508527667701548,
+    "rate": 0.029826992001389364,
+    "renyi12_rate": 0.2727117070958513,
+    "pi1": 0.01380670611439842
+   },
+   "exact_miss": {
+    "oracle": 0.02582790790181244,
+    "universal_under_true_law": 0.033051438840763336
+   },
+   "res": {
+    "oracle_markov": {
+     "blocks": 2500,
+     "bler": 0.028000000000000025,
+     "cap_rate": 0.028,
+     "q_med": 1.0,
+     "q_p90": 757.4999999999986
+    },
+    "universal_kt": {
+     "blocks": 2500,
+     "bler": 0.028000000000000025,
+     "cap_rate": 0.028,
+     "q_med": 1.0,
+     "q_p90": 2697.5999999999985
+    },
+    "iid_matched_interleaved": {
+     "blocks": 2500,
+     "bler": 0.2388,
+     "cap_rate": 0.2388,
+     "q_med": 539.0,
+     "q_p90": 30000.0
+    },
+    "iid_mismatch_raw": {
+     "blocks": 2500,
+     "bler": 0.1704,
+     "cap_rate": 0.1704,
+     "q_med": 1.0,
+     "q_p90": 30000.0
+    }
+   }
+  },
+  {
+   "kappa": 0.85,
+   "b": 0.00255,
+   "rates": {
+    "marginal": 0.12258070627309207,
+    "rate": 0.03540850041882864,
+    "renyi12_rate": 0.28903268276727817,
+    "pi1": 0.016715830875122902
+   },
+   "exact_miss": {
+    "oracle": 0.03680114746153451,
+    "universal_under_true_law": 0.04590086342431954
+   },
+   "res": {
+    "oracle_markov": {
+     "blocks": 2500,
+     "bler": 0.03600000000000003,
+     "cap_rate": 0.036,
+     "q_med": 1.0,
+     "q_p90": 1075.2999999999997
+    },
+    "universal_kt": {
+     "blocks": 2500,
+     "bler": 0.04239999999999999,
+     "cap_rate": 0.0424,
+     "q_med": 1.0,
+     "q_p90": 3535.6999999999994
+    },
+    "iid_matched_interleaved": {
+     "blocks": 2500,
+     "bler": 0.356,
+     "cap_rate": 0.356,
+     "q_med": 4304.5,
+     "q_p90": 30000.0
+    },
+    "iid_mismatch_raw": {
+     "blocks": 2500,
+     "bler": 0.20440000000000003,
+     "cap_rate": 0.2044,
+     "q_med": 1.0,
+     "q_p90": 30000.0
+    }
+   }
+  },
+  {
+   "kappa": 1.0,
+   "b": 0.003,
+   "rates": {
+    "marginal": 0.13923299905509895,
+    "rate": 0.040843978371813985,
+    "renyi12_rate": 0.3032467658217573,
+    "pi1": 0.019607843137254912
+   },
+   "exact_miss": {
+    "oracle": 0.04923080853941508,
+    "universal_under_true_law": 0.060251672947989054
+   },
+   "res": {
+    "oracle_markov": {
+     "blocks": 2500,
+     "bler": 0.05479999999999996,
+     "cap_rate": 0.0548,
+     "q_med": 1.0,
+     "q_p90": 1371.1999999999998
+    },
+    "universal_kt": {
+     "blocks": 2500,
+     "bler": 0.06879999999999997,
+     "cap_rate": 0.0688,
+     "q_med": 1.0,
+     "q_p90": 20662.6
+    },
+    "iid_matched_interleaved": {
+     "blocks": 2500,
+     "bler": 0.4384,
+     "cap_rate": 0.4384,
+     "q_med": 6722.0,
+     "q_p90": 30000.0
+    },
+    "iid_mismatch_raw": {
+     "blocks": 2500,
+     "bler": 0.22440000000000004,
+     "cap_rate": 0.2244,
+     "q_med": 1.0,
+     "q_p90": 30000.0
+    }
+   }
+  },
+  {
+   "kappa": 1.2,
+   "b": 0.0036,
+   "rates": {
+    "marginal": 0.16032872589902847,
+    "rate": 0.04789506261629023,
+    "renyi12_rate": 0.3198025896593803,
+    "pi1": 0.02343749999999999
+   },
+   "exact_miss": {
+    "oracle": 0.06776526549709216,
+    "universal_under_true_law": 0.08137506168894515
+   },
+   "res": {
+    "oracle_markov": {
+     "blocks": 2500,
+     "bler": 0.0696,
+     "cap_rate": 0.0696,
+     "q_med": 1.0,
+     "q_p90": 1849.7999999999993
+    },
+    "universal_kt": {
+     "blocks": 2500,
+     "bler": 0.07720000000000005,
+     "cap_rate": 0.0772,
+     "q_med": 1.0,
+     "q_p90": 21930.499999999996
+    },
+    "iid_matched_interleaved": {
+     "blocks": 2500,
+     "bler": 0.5564,
+     "cap_rate": 0.5564,
+     "q_med": 30000.0,
+     "q_p90": 30000.0
+    },
+    "iid_mismatch_raw": {
+     "blocks": 2500,
+     "bler": 0.3052,
+     "cap_rate": 0.3052,
+     "q_med": 1.0,
+     "q_p90": 30000.0
+    }
+   }
+  }
+ ],
+ "splice": {
+  "pre": [
+   0.003,
+   0.85
+  ],
+  "post": [
+   0.008,
+   0.55
+  ],
+  "fitted_static": {
+   "blocks": 2500,
+   "bler": 0.22160000000000002,
+   "cap_rate": 0.2216,
+   "q_med": 124.5,
+   "q_p90": 30000.0
+  },
+  "universal": {
+   "blocks": 2500,
+   "bler": 0.22960000000000003,
+   "cap_rate": 0.2296,
+   "q_med": 144.0,
+   "q_p90": 30000.0
+  },
+  "fitted_over_universal_bler_ratio": 0.9651567944250871
+ }
+}

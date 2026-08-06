@@ -1,0 +1,21 @@
+{
+ "defect": "leaf starvation of naive best-first prefix enumeration",
+ "verified_constants_at_260k_pops": {
+  "KTHierarchy_leaves": 837,
+  "IID_leaves": 129,
+  "Markov_0075_085_leaves": 3594
+ },
+ "void_results": [
+  "k4_head_to_head.json",
+  "k4b_window.json",
+  "x4_resolution.json",
+  "K0 positive control at n>=96 (starved; predicted bler ~0.07 at n=96, ~0.14 at n=128)"
+ ],
+ "unaffected": [
+  "k2 (X2)",
+  "k3 (X2)",
+  "k5 (X3)",
+  "k6 (X1)"
+ ],
+ "repair": "A* with admissible completion heuristics + one-time list enumeration + vectorized syndrome matching; exact ranking preserved; instrument self-calibrates against analytic miss-mass"
+}

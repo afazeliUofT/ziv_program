@@ -33,6 +33,13 @@
    "runtime_s": 517.7,
    "X4_status_pooled": "AMBIGUOUS",
    "reason": "AMBIGUOUS meant zero in-window operating points (grid straddled the window); this is the pre-registered escalation, not a threshold change."
+  },
+  "k4c": {
+   "seed": 20260813,
+   "runtime_s": 265.4,
+   "X4_status_v2": "PASS",
+   "X5_status_v2": "FAIL",
+   "note": "apparatus repaired; k4/k4b void; see results/apparatus_audit.json"
   }
  },
  "thresholds": {
@@ -78,6 +85,27 @@
    "PIVOT": "X5 FAIL with X4 PASS -> online-adaptive reframe; X2 FAIL alone -> drop effective DL geometry, keep Pillars I/II; X4 FAIL alone -> storage/hybrid niche or asymptotic-theory-only",
    "CONTINUE": "X2, X3, X4 PASS (X1 provisional acceptable pending real traces)"
   }
+ },
+ "apparatus_audit.json": {
+  "defect": "leaf starvation of naive best-first prefix enumeration",
+  "verified_constants_at_260k_pops": {
+   "KTHierarchy_leaves": 837,
+   "IID_leaves": 129,
+   "Markov_0075_085_leaves": 3594
+  },
+  "void_results": [
+   "k4_head_to_head.json",
+   "k4b_window.json",
+   "x4_resolution.json",
+   "K0 positive control at n>=96 (starved; predicted bler ~0.07 at n=96, ~0.14 at n=128)"
+  ],
+  "unaffected": [
+   "k2 (X2)",
+   "k3 (X2)",
+   "k5 (X3)",
+   "k6 (X1)"
+  ],
+  "repair": "A* with admissible completion heuristics + one-time list enumeration + vectorized syndrome matching; exact ranking preserved; instrument self-calibrates against analytic miss-mass"
  },
  "k0_controls.json": {
   "positive": [
@@ -620,6 +648,244 @@
    }
   ],
   "runtime_s": 517.7
+ },
+ "k4c_cells.json": {
+  "config": {
+   "n": 128,
+   "m": 32,
+   "R": 0.75,
+   "a": 0.85,
+   "cap": 30000,
+   "blocks": 2500,
+   "kappas": [
+    0.7,
+    0.85,
+    1.0,
+    1.2
+   ],
+   "seed": 20260813
+  },
+  "canary": {
+   "iid_matched": {
+    "predicted_miss_exact": 0.025430198169642648,
+    "blocks": 1200,
+    "bler": 0.02083333333333337,
+    "cap_rate": 0.020833333333333332,
+    "q_med": 1.0,
+    "q_p90": 1203.3000000000168
+   },
+   "markov_matched": {
+    "predicted_miss_exact": 0.19525617517921512,
+    "blocks": 1200,
+    "bler": 0.1808333333333333,
+    "cap_rate": 0.18083333333333335,
+    "q_med": 211.5,
+    "q_p90": 30000.0
+   }
+  },
+  "cells": [
+   {
+    "kappa": 0.7,
+    "b": 0.0021,
+    "rates": {
+     "marginal": 0.10508527667701548,
+     "rate": 0.029826992001389364,
+     "renyi12_rate": 0.2727117070958513,
+     "pi1": 0.01380670611439842
+    },
+    "exact_miss": {
+     "oracle": 0.02582790790181244,
+     "universal_under_true_law": 0.033051438840763336
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 2500,
+      "bler": 0.028000000000000025,
+      "cap_rate": 0.028,
+      "q_med": 1.0,
+      "q_p90": 757.4999999999986
+     },
+     "universal_kt": {
+      "blocks": 2500,
+      "bler": 0.028000000000000025,
+      "cap_rate": 0.028,
+      "q_med": 1.0,
+      "q_p90": 2697.5999999999985
+     },
+     "iid_matched_interleaved": {
+      "blocks": 2500,
+      "bler": 0.2388,
+      "cap_rate": 0.2388,
+      "q_med": 539.0,
+      "q_p90": 30000.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 2500,
+      "bler": 0.1704,
+      "cap_rate": 0.1704,
+      "q_med": 1.0,
+      "q_p90": 30000.0
+     }
+    }
+   },
+   {
+    "kappa": 0.85,
+    "b": 0.00255,
+    "rates": {
+     "marginal": 0.12258070627309207,
+     "rate": 0.03540850041882864,
+     "renyi12_rate": 0.28903268276727817,
+     "pi1": 0.016715830875122902
+    },
+    "exact_miss": {
+     "oracle": 0.03680114746153451,
+     "universal_under_true_law": 0.04590086342431954
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 2500,
+      "bler": 0.03600000000000003,
+      "cap_rate": 0.036,
+      "q_med": 1.0,
+      "q_p90": 1075.2999999999997
+     },
+     "universal_kt": {
+      "blocks": 2500,
+      "bler": 0.04239999999999999,
+      "cap_rate": 0.0424,
+      "q_med": 1.0,
+      "q_p90": 3535.6999999999994
+     },
+     "iid_matched_interleaved": {
+      "blocks": 2500,
+      "bler": 0.356,
+      "cap_rate": 0.356,
+      "q_med": 4304.5,
+      "q_p90": 30000.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 2500,
+      "bler": 0.20440000000000003,
+      "cap_rate": 0.2044,
+      "q_med": 1.0,
+      "q_p90": 30000.0
+     }
+    }
+   },
+   {
+    "kappa": 1.0,
+    "b": 0.003,
+    "rates": {
+     "marginal": 0.13923299905509895,
+     "rate": 0.040843978371813985,
+     "renyi12_rate": 0.3032467658217573,
+     "pi1": 0.019607843137254912
+    },
+    "exact_miss": {
+     "oracle": 0.04923080853941508,
+     "universal_under_true_law": 0.060251672947989054
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 2500,
+      "bler": 0.05479999999999996,
+      "cap_rate": 0.0548,
+      "q_med": 1.0,
+      "q_p90": 1371.1999999999998
+     },
+     "universal_kt": {
+      "blocks": 2500,
+      "bler": 0.06879999999999997,
+      "cap_rate": 0.0688,
+      "q_med": 1.0,
+      "q_p90": 20662.6
+     },
+     "iid_matched_interleaved": {
+      "blocks": 2500,
+      "bler": 0.4384,
+      "cap_rate": 0.4384,
+      "q_med": 6722.0,
+      "q_p90": 30000.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 2500,
+      "bler": 0.22440000000000004,
+      "cap_rate": 0.2244,
+      "q_med": 1.0,
+      "q_p90": 30000.0
+     }
+    }
+   },
+   {
+    "kappa": 1.2,
+    "b": 0.0036,
+    "rates": {
+     "marginal": 0.16032872589902847,
+     "rate": 0.04789506261629023,
+     "renyi12_rate": 0.3198025896593803,
+     "pi1": 0.02343749999999999
+    },
+    "exact_miss": {
+     "oracle": 0.06776526549709216,
+     "universal_under_true_law": 0.08137506168894515
+    },
+    "res": {
+     "oracle_markov": {
+      "blocks": 2500,
+      "bler": 0.0696,
+      "cap_rate": 0.0696,
+      "q_med": 1.0,
+      "q_p90": 1849.7999999999993
+     },
+     "universal_kt": {
+      "blocks": 2500,
+      "bler": 0.07720000000000005,
+      "cap_rate": 0.0772,
+      "q_med": 1.0,
+      "q_p90": 21930.499999999996
+     },
+     "iid_matched_interleaved": {
+      "blocks": 2500,
+      "bler": 0.5564,
+      "cap_rate": 0.5564,
+      "q_med": 30000.0,
+      "q_p90": 30000.0
+     },
+     "iid_mismatch_raw": {
+      "blocks": 2500,
+      "bler": 0.3052,
+      "cap_rate": 0.3052,
+      "q_med": 1.0,
+      "q_p90": 30000.0
+     }
+    }
+   }
+  ],
+  "splice": {
+   "pre": [
+    0.003,
+    0.85
+   ],
+   "post": [
+    0.008,
+    0.55
+   ],
+   "fitted_static": {
+    "blocks": 2500,
+    "bler": 0.22160000000000002,
+    "cap_rate": 0.2216,
+    "q_med": 124.5,
+    "q_p90": 30000.0
+   },
+   "universal": {
+    "blocks": 2500,
+    "bler": 0.22960000000000003,
+    "cap_rate": 0.2296,
+    "q_med": 144.0,
+    "q_p90": 30000.0
+   },
+   "fitted_over_universal_bler_ratio": 0.9651567944250871
+  }
  },
  "k5_individual.json": {
   "exhaustive_vs_2state": [
@@ -1258,5 +1524,76 @@
   "passing_points": 0,
   "X4_status_pooled": "AMBIGUOUS",
   "note": "Pooled over original K4 cells and the K4b window cells; same frozen thresholds; original results untouched."
+ },
+ "x4_resolution_v2.json": {
+  "points": [
+   {
+    "kappa": 0.7,
+    "oracle_bler": 0.028000000000000025,
+    "universal_bler": 0.028000000000000025,
+    "interleaved_bler": 0.2388,
+    "q_med": 1.0,
+    "in_window": true,
+    "point_pass": true
+   },
+   {
+    "kappa": 0.85,
+    "oracle_bler": 0.03600000000000003,
+    "universal_bler": 0.04239999999999999,
+    "interleaved_bler": 0.356,
+    "q_med": 1.0,
+    "in_window": true,
+    "point_pass": true
+   },
+   {
+    "kappa": 1.0,
+    "oracle_bler": 0.05479999999999996,
+    "universal_bler": 0.06879999999999997,
+    "interleaved_bler": 0.4384,
+    "q_med": 1.0,
+    "in_window": false,
+    "point_pass": false
+   },
+   {
+    "kappa": 1.2,
+    "oracle_bler": 0.0696,
+    "universal_bler": 0.07720000000000005,
+    "interleaved_bler": 0.5564,
+    "q_med": 1.0,
+    "in_window": false,
+    "point_pass": false
+   }
+  ],
+  "passing_points": 2,
+  "X4_status_v2": "PASS",
+  "note": "k4c cells only; k4/k4b VOID (apparatus)"
+ },
+ "x5_resolution_v2.json": {
+  "X5_status_v2": "FAIL",
+  "detail": {
+   "pre": [
+    0.003,
+    0.85
+   ],
+   "post": [
+    0.008,
+    0.55
+   ],
+   "fitted_static": {
+    "blocks": 2500,
+    "bler": 0.22160000000000002,
+    "cap_rate": 0.2216,
+    "q_med": 124.5,
+    "q_p90": 30000.0
+   },
+   "universal": {
+    "blocks": 2500,
+    "bler": 0.22960000000000003,
+    "cap_rate": 0.2296,
+    "q_med": 144.0,
+    "q_p90": 30000.0
+   },
+   "fitted_over_universal_bler_ratio": 0.9651567944250871
+  }
  }
 }

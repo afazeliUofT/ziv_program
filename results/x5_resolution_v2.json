@@ -1,0 +1,28 @@
+{
+ "X5_status_v2": "FAIL",
+ "detail": {
+  "pre": [
+   0.003,
+   0.85
+  ],
+  "post": [
+   0.008,
+   0.55
+  ],
+  "fitted_static": {
+   "blocks": 2500,
+   "bler": 0.22160000000000002,
+   "cap_rate": 0.2216,
+   "q_med": 124.5,
+   "q_p90": 30000.0
+  },
+  "universal": {
+   "blocks": 2500,
+   "bler": 0.22960000000000003,
+   "cap_rate": 0.2296,
+   "q_med": 144.0,
+   "q_p90": 30000.0
+  },
+  "fitted_over_universal_bler_ratio": 0.9651567944250871
+ }
+}
