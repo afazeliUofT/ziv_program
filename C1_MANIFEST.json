@@ -1,0 +1,11 @@
+{
+ "scale": "full",
+ "timings_s": {
+  "c1a": 185.0,
+  "c1b": 0.0,
+  "c1c": 0.5,
+  "c1d": 1.9
+ },
+ "total_s": 187.5,
+ "c1_gate": "C1_MEASURED"
+}

@@ -1,0 +1,136 @@
+{
+ "rows": [
+  {
+   "s": 2,
+   "n": 8,
+   "n_machines": 16,
+   "Cstar": 3.4545454545454546,
+   "log2_Cstar": 1.7884958948062883,
+   "generic_bound": 16,
+   "kstar": 38,
+   "b_at_kstar": 11,
+   "b_max": 150,
+   "b_median": 58.0
+  },
+  {
+   "s": 2,
+   "n": 10,
+   "n_machines": 16,
+   "Cstar": 3.6307692307692307,
+   "log2_Cstar": 1.8602752363333868,
+   "generic_bound": 16,
+   "kstar": 236,
+   "b_at_kstar": 65,
+   "b_max": 752,
+   "b_median": 224.0
+  },
+  {
+   "s": 2,
+   "n": 12,
+   "n_machines": 16,
+   "Cstar": 4.38,
+   "log2_Cstar": 2.130930869826449,
+   "generic_bound": 16,
+   "kstar": 438,
+   "b_at_kstar": 100,
+   "b_max": 2934,
+   "b_median": 745.0
+  },
+  {
+   "s": 2,
+   "n": 14,
+   "n_machines": 16,
+   "Cstar": 4.407407407407407,
+   "log2_Cstar": 2.139930261144475,
+   "generic_bound": 16,
+   "kstar": 476,
+   "b_at_kstar": 108,
+   "b_max": 10630,
+   "b_median": 3124.0
+  },
+  {
+   "s": 2,
+   "n": 16,
+   "n_machines": 16,
+   "Cstar": 5.080402010050252,
+   "log2_Cstar": 2.344942661359366,
+   "generic_bound": 16,
+   "kstar": 2022,
+   "b_at_kstar": 398,
+   "b_max": 43580,
+   "b_median": 12028.0
+  },
+  {
+   "s": 2,
+   "n": 18,
+   "n_machines": 16,
+   "Cstar": 4.967320261437909,
+   "log2_Cstar": 2.312467765638296,
+   "generic_bound": 16,
+   "kstar": 760,
+   "b_at_kstar": 153,
+   "b_max": 178060,
+   "b_median": 44898.0
+  },
+  {
+   "s": 2,
+   "n": 20,
+   "n_machines": 16,
+   "Cstar": 5.371187236039418,
+   "log2_Cstar": 2.4252410137662657,
+   "generic_bound": 16,
+   "kstar": 11446,
+   "b_at_kstar": 2131,
+   "b_max": 725526,
+   "b_median": 171558.0
+  },
+  {
+   "s": 3,
+   "n": 8,
+   "n_machines": 729,
+   "Cstar": 9.5,
+   "log2_Cstar": 3.2479275134435857,
+   "generic_bound": 729,
+   "kstar": 152,
+   "b_at_kstar": 16,
+   "b_max": 72,
+   "b_median": 16.0
+  },
+  {
+   "s": 3,
+   "n": 10,
+   "n_machines": 729,
+   "Cstar": 11.846153846153847,
+   "log2_Cstar": 3.5663468225538093,
+   "generic_bound": 729,
+   "kstar": 154,
+   "b_at_kstar": 13,
+   "b_max": 352,
+   "b_median": 61.0
+  },
+  {
+   "s": 3,
+   "n": 12,
+   "n_machines": 729,
+   "Cstar": 14.235294117647058,
+   "log2_Cstar": 3.831400396024255,
+   "generic_bound": 729,
+   "kstar": 242,
+   "b_at_kstar": 17,
+   "b_max": 1470,
+   "b_median": 214.0
+  },
+  {
+   "s": 3,
+   "n": 14,
+   "n_machines": 729,
+   "Cstar": 15.333333333333334,
+   "log2_Cstar": 3.9385994553358565,
+   "generic_bound": 729,
+   "kstar": 322,
+   "b_at_kstar": 21,
+   "b_max": 5744,
+   "b_median": 785.0
+  }
+ ]
+}
