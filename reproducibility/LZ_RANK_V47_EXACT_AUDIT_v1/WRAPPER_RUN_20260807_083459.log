@@ -1,0 +1,214 @@
+
++ /home/afazeli2006/.venvs/lz_rank_v47_exact_audit_v1/bin/python run_audit.py --scale full --output results_full_20260807_083459
+[exact] s=2 n=8: 16 topologies, 256 sequences
+  topology 1/16
+  topology 2/16
+  topology 3/16
+  topology 4/16
+  topology 5/16
+  topology 6/16
+  topology 7/16
+  topology 8/16
+  topology 9/16
+  topology 10/16
+  topology 11/16
+  topology 12/16
+  topology 13/16
+  topology 14/16
+  topology 15/16
+  topology 16/16
+  C*=38/11=3.45454545455
+  independent BEST check: PASS
+[exact] s=2 n=10: 16 topologies, 1024 sequences
+  topology 1/16
+  topology 2/16
+  topology 3/16
+  topology 4/16
+  topology 5/16
+  topology 6/16
+  topology 7/16
+  topology 8/16
+  topology 9/16
+  topology 10/16
+  topology 11/16
+  topology 12/16
+  topology 13/16
+  topology 14/16
+  topology 15/16
+  topology 16/16
+  C*=236/65=3.63076923077
+  independent BEST check: PASS
+[exact] s=2 n=12: 16 topologies, 4096 sequences
+  topology 1/16
+  topology 2/16
+  topology 3/16
+  topology 4/16
+  topology 5/16
+  topology 6/16
+  topology 7/16
+  topology 8/16
+  topology 9/16
+  topology 10/16
+  topology 11/16
+  topology 12/16
+  topology 13/16
+  topology 14/16
+  topology 15/16
+  topology 16/16
+  C*=219/50=4.38
+  independent BEST check: PASS
+[exact] s=2 n=14: 16 topologies, 16384 sequences
+  topology 1/16
+  topology 2/16
+  topology 3/16
+  topology 4/16
+  topology 5/16
+  topology 6/16
+  topology 7/16
+  topology 8/16
+  topology 9/16
+  topology 10/16
+  topology 11/16
+  topology 12/16
+  topology 13/16
+  topology 14/16
+  topology 15/16
+  topology 16/16
+  C*=119/27=4.40740740741
+  independent BEST check: PASS
+[exact] s=2 n=16: 16 topologies, 65536 sequences
+  topology 1/16
+  topology 2/16
+  topology 3/16
+  topology 4/16
+  topology 5/16
+  topology 6/16
+  topology 7/16
+  topology 8/16
+  topology 9/16
+  topology 10/16
+  topology 11/16
+  topology 12/16
+  topology 13/16
+  topology 14/16
+  topology 15/16
+  topology 16/16
+  C*=1011/199=5.08040201005
+[exact] s=2 n=18: 16 topologies, 262144 sequences
+  topology 1/16
+  topology 2/16
+  topology 3/16
+  topology 4/16
+  topology 5/16
+  topology 6/16
+  topology 7/16
+  topology 8/16
+  topology 9/16
+  topology 10/16
+  topology 11/16
+  topology 12/16
+  topology 13/16
+  topology 14/16
+  topology 15/16
+  topology 16/16
+  C*=760/153=4.96732026144
+[exact] s=2 n=20: 16 topologies, 1048576 sequences
+  topology 1/16
+  topology 2/16
+  topology 3/16
+  topology 4/16
+  topology 5/16
+  topology 6/16
+  topology 7/16
+  topology 8/16
+  topology 9/16
+  topology 10/16
+  topology 11/16
+  topology 12/16
+  topology 13/16
+  topology 14/16
+  topology 15/16
+  topology 16/16
+  C*=11446/2131=5.37118723604
+[exact] s=3 n=8: 729 topologies, 256 sequences
+  topology 72/729
+  topology 144/729
+  topology 216/729
+  topology 288/729
+  topology 360/729
+  topology 432/729
+  topology 504/729
+  topology 576/729
+  topology 648/729
+  topology 720/729
+  topology 729/729
+  C*=19/2=9.5
+[exact] s=3 n=10: 729 topologies, 1024 sequences
+  topology 72/729
+  topology 144/729
+  topology 216/729
+  topology 288/729
+  topology 360/729
+  topology 432/729
+  topology 504/729
+  topology 576/729
+  topology 648/729
+  topology 720/729
+  topology 729/729
+  C*=154/13=11.8461538462
+[exact] s=3 n=12: 729 topologies, 4096 sequences
+  topology 72/729
+  topology 144/729
+  topology 216/729
+  topology 288/729
+  topology 360/729
+  topology 432/729
+  topology 504/729
+  topology 576/729
+  topology 648/729
+  topology 720/729
+  topology 729/729
+  C*=242/17=14.2352941176
+[exact] s=3 n=14: 729 topologies, 16384 sequences
+  topology 72/729
+  topology 144/729
+  topology 216/729
+  topology 288/729
+  topology 360/729
+  topology 432/729
+  topology 504/729
+  topology 576/729
+  topology 648/729
+  topology 720/729
+  topology 729/729
+  C*=46/3=15.3333333333
+[exact] gate=PASS output=/home/afazeli2006/GRAND_Work/experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459
+
++ git add -- experiments/LZ_RANK_V47_EXACT_AUDIT_v1
+warning: in the working copy of 'experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459/EXACT_CSTAR.csv', CRLF will be replaced by LF the next time Git touches it
+
++ git commit -m Add v4.7 exact rank audit results (2026-08-07 08:36:06) -- experiments/LZ_RANK_V47_EXACT_AUDIT_v1
+warning: in the working copy of 'experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459/EXACT_CSTAR.csv', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459/EXACT_CSTAR.csv', CRLF will be replaced by LF the next time Git touches it
+[main d418d63] Add v4.7 exact rank audit results (2026-08-07 08:36:06)
+ 16 files changed, 1250 insertions(+)
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/README.md
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/REFERENCE_RESULTS.json
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/REFERENCE_RESULTS.md
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/SHA256SUMS
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/THEOREM_AUDIT_TARGETS.md
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/WRAPPER_RUN_20260807_083459.log
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/lz_rank_exact_audit/__init__.py
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/lz_rank_exact_audit/core.py
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/lz_rank_exact_audit/run_exact.py
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/requirements.txt
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459/EXACT_AUDIT_SCORECARD.json
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459/EXACT_CSTAR.csv
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459/RESULTS_SUMMARY.md
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459/RUN_MANIFEST.json
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/results_full_20260807_083459/SHA256SUMS
+ create mode 100644 experiments/LZ_RANK_V47_EXACT_AUDIT_v1/run_audit.py
+
++ git push origin main
+To github.com:afazeliUofT/Grand_Work.git
+   191db40..d418d63  main -> main

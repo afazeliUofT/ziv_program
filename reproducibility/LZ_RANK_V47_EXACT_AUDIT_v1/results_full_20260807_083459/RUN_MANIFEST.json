@@ -1,0 +1,9 @@
+{
+  "command": "run_audit.py --scale full --output results_full_20260807_083459",
+  "elapsed_s": 66.132,
+  "gate": "PASS",
+  "numpy": "2.5.1",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "started_unix": 1786106099.9624455
+}
